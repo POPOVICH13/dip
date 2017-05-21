@@ -1,0 +1,3358 @@
+﻿----------------------- Page 1-----------------------
+
+   Transition to Cloud Computing  in  Healthcare  Information  Systems 
+
+                                                     by                                  ARCHIVES 
+
+                                                                                    MASSACHUSETTS    INSTITUTE 
+                                                Haiying Ren                              C--EHNOLOGY 
+
+                                         B.S.  Engineering  Physics                      JUL   112012 
+
+                                        Tsinghua  University, 1996 
+
+     SUBMITTED  TO THE  DEPARTMENT  OF  SYSTEM  DESIGN  AND  MANAGEMENT  IN  PARTIAL 
+
+  FULFILLMENT  OF THE  REQUIREMENTS           FOR THE  DEGREE  OF  MASTER  OF  SCIENCE   IN  SYSTEM 
+
+    ENGINEERING  AND  MANAGEMENT  AT THE  MASSACHUSETTS   INSTITUTE  OF  TECHNOLOGY 
+
+                                             FEBRUARY  2012 
+
+                                 @2012  Haiying Ren.  All  rights  reserved 
+
+ The  author hereby grants to  MIT  permission to  reproduce  and to distribute  publicly paper and 
+
+                          this thesis document  in whole  or  in  part in  any medium  now known of 
+   electronic copies of  
+
+                                            hereafter  created. 
+
+Signature of Author: 
+
+                                                                                                Haiying Ren 
+
+                                                      Department of System  Design and  Management 
+
+                                                                                          Febr    ry 7,  2012 
+
+  Certified  by: 
+                                                                                   David  Hartzband,  D.Sc. 
+
+                                                      Department of System  Design and  Management 
+
+                                                                                         Thesis Supervisor 
+
+Accepted  by: 
+                                                                                               Patrck  Hale 
+
+                                                      Department  of System  Design and  Management 
+
+                                                                                         Program  Director 
+
+----------------------- Page 2-----------------------
+
+    Transition  to Cloud  Computing  in  Healthcare  Information Systems 
+
+                                                      by 
+
+                                                Haiying Ren 
+
+   SUBMITTED  TO THE  DEPARTMENT  OF  SYSTEM  DESIGN  AND  MANAGEMENT  ON  February 7, 
+    2012  IN PARTIAL  FULFILLMENT  OF  THE  REQUIREMENTS   FOR THE  DEGREE  OF  MASTER  OF 
+ SCIENCE   IN SYSTEM  ENGINEERING  AND  MANAGEMENT  AT  THE  MASSACHUSETTS   INSTITUTE  OF 
+                                               TECHNOLOGY 
+
+ABSTRACT 
+
+This thesis  is  a  study  on the  adoption  of cloud  computing  in  
+                                                                    healthcare  information  technology 
+industry.  It provides  a  guideline  for people  who  are trying to bring  cloud  computing  into 
+healthcare  information  systems through  the  use  of a  framework  of tools and  processes to 
+overcome  both technical and  business challenges. 
+
+Thesis Supervisor:  David  Hartzband,  D.Sc. 
+
+Title:  Lecturer, Engineering Systems  Division 
+
+                                                    - 1 - 
+
+----------------------- Page 3-----------------------
+
+Table of Contents 
+Acronym ......................................................................................................................................          - 3- 
+
+ 1.     Introduction .........................................................................................................................            5- 
+
+                                        ation...................................................................................................          7 - 
+2.      Background  Inform  
+
+    2.1        Cloud  Com puting.....................................................................................................                      7 - 
+
+                                                                   s................................................................................  -  13  - 
+    2.2         Healthcare  Inform ation System  
+
+                                                                                                                                                          24 - 
+3.      System  Analysis  .................................................................................................................  
+
+          3.1      The  Healthcare Information  Technology  (HIT)  Ecosystem.................-....                                                      24- 
+
+                                                                                                                                                      -  28  - 
+          3.2      System Architecture  ...............................................................................................  
+
+          3.3       Business Dynam ics..................................................................................................              -   30 - 
+
+                                                                                                                                                      -   32 - 
+4.      Findings - The fram ework ..................................................................................................  
+
+          4.1      Strategy...................................................................................................................           - 34 - 
+
+          4.2       Regulation  & Policy.................................................................................................             -   37 - 
+
+          4.3      Technology..............................................................................................................               39  - 
+
+                                                                                                                                                      -    42 - 
+        4.4         Im plem entation ......................................................................................................  
+
+          4.5       Evaluate the  "Success  Factor"................................................................................                     - 43  - 
+
+ 5.      EHR  - A  Case  Study.............................................................................................................                44 - 
+
+ 6.     Conclusions........................................................................................................................               59  - 
+
+                                                                                                                                                      -    59 - 
+ 7.     Acknow ledgem ents ...........................................................................................................  
+
+                                                                                                                                                          60  - 
+ Bibliography ..............................................................................................................................  
+
+ Appendix  I EHR  Workflow and  Implementation  Checklist (by  HIMSS)....................  -  64 - 
+
+                                                                             -2- 
+
+----------------------- Page 4-----------------------
+
+Acronym 
+
+ ACA                    Affordable  Care  Act 
+
+ AHRQ                   Agency for  Healthcare Research  and  Quality 
+
+ ARRA                   American  Recovery and  Reinvestment Act 
+
+ CHC                    Community  Health  Center 
+
+  CHPL                  Certified  Health  IT Product  List 
+
+ CLIA                   Clinical  Laboratory  Improvement  Amendments 
+
+ CMS                    Centers for Medicare &  Medicaid Services 
+
+ CONNECT                An  open  source software  NHIN 
+
+  EHR                   Electronic  Health  Record 
+
+ EPHI                   Electronic  Protected Health  Information 
+
+ EMR                    Electronic  Medical  Record 
+
+ FISMA                  Federal  Information Security  Management Act 
+
+ HCCN                   Health Center Controlled  Network 
+
+ HHS                    United  States Department  of Health and  Human Services 
+
+ HIE                    Health  Information  Exchange 
+
+ HIPAA                  Health  Insurance  Portability and Accountability Act 
+
+ HIT                    Health  Information Technology 
+
+ HITECH                 Health  Information Technology for  Economic and  Clinical  Health Act 
+
+ NAMCS                  National Ambulatory  Medical Care  Survey  (NAMCS) 
+
+ NCHS                   National  Center for  Health  Statistics 
+
+ NwHIN                  Nationwide  Health  Information  Network 
+
+                                                      -3- 
+
+----------------------- Page 5-----------------------
+
+NwHIN  Direct           Nationwide  Health  Information  Network  Direct 
+
+ONC                     Office of the  National  Coordinator  for  Health  Information Technology 
+
+PCAST                   President's Council of Advisors on Science  and Technology 
+
+PHI                     Protected  Health  Information 
+
+PHR                     Personal  Health  Record 
+
+PPACA                   Patient  Protection and Affordable  Care Act 
+
+PRA                     Paperwork  Reduction Act 
+
+RHIO                    Regional  Health  Information Organization 
+
+SCANNER                 Scalable  Nationwide  Network for  Effectiveness Research 
+
+                                                       -4- 
+
+----------------------- Page 6-----------------------
+
+ 1.  Introduction 
+
+ The  focus  of  this  thesis  is to  explore  the  current  state  of  the  art  of  applications  of  cloud 
+
+ computing  in the  healthcare  information technology  industry. The  goal  is  
+                                                                                        to  provide guidelines 
+
+ for  people  who  are  trying  to  bring  cloud  computing  into  healthcare   information  systems, 
+
+ through  the  use   of  a framework   of  tools  and   processes  to  overcome  both  technical  and 
+
+ business challenges. 
+
+ The  healthcare  industry  has  been  slow  in adopting  the  cloud  computing  model  compared  to 
+
+ some  other  industries. According  to  the  CDW  2011  Cloud  Computing  Tracking  Poll,  only thirty 
+
+ percent  of organizations  in  healthcare  are  implementing or  maintaining cloud computing  based 
+
+ systems  (CDW   LLC,   2011).  Among  those   healthcare  organizations  who   have  adopted  cloud 
+
+ computing,  39%  of  them   are  using  Live   Meeting,  24%  are   using  Gmail,  and   18%  are  using 
+
+ Google  Docs.  Therefore  so  far  the  dominant  cloud  services  adopted  in   healthcare  are  still 
+
+ commodity  applications,  not  yet  the  core  applications  with  healthcare  specialties  or  other 
+
+cloud-based  services,  like storage. 
+
+ During the  course  of the  research  for this thesis,  I reviewed  the  latest  literature,  interviewed  a 
+
+number      of  professionals,    researchers,     and   leaders   in   cloud   computing   and      healthcare 
+
+information  technology  fields,  and  used  various  analytical tools  learned  in  the  System  Design 
+
+and  Management  program,  such  as system  analysis and  business  dynamics, to fully  understand 
+
+the  dynamics  and  challenges  in  the  transformation  from  conventional  computing  into  cloud 
+
+computing in  healthcare  industry. 
+
+A series  of  issues,  including  but  not  limited  to  security  and  privacy,  government  policies  and 
+
+regulations, and  data  handling  are the  major  roadblocks for  a rapid cloud  computing  adoption. 
+
+There  are  much  literature  describing the existence  of these  issues, their  consequences, and  the 
+
+urgency  of  solving  these   issues.      But  few   have   addressed   the   root  causes   and      provided 
+
+pragmatic  solutions.  This  thesis  is an  attempt  to  reconcile  the  major  issues  that  have  been 
+
+discovered  in  literature  and  in  discussions  with  people  in the  field,  and  then  provide  practical 
+
+guidelines on  overcoming these  roadblocks  using analytical tools.  Even though  no one  absolute 
+
+solution works  for  all  scenarios,  at  least  we  hope  to  reveal  all  the  hidden  blocks and  spell  out 
+
+                                                      -5- 
+
+----------------------- Page 7-----------------------
+
+the  principles, so  that  the  readers  can  get  ahead  of the  curve when  facing  the transformation. 
+
+Willingly  or  unwillingly,  people  in the  field  have  to  stand  up  to  the  transformation   as   it  is 
+
+coming  at their way. 
+
+To  make this  thesis  self-sufficient for  all  levels  of  readers,  it  will  start with  some  background 
+
+information  on   cloud   computing  and   healthcare   information   systems,   as  well   as                 related 
+
+regulations.  Healthcare  is a huge  industry and  information technology  plays an  important  role 
+
+with  many  perspectives.  In the  context  of this thesis,  the  discussions  will  be  centered  on  the 
+
+domain  specific  applications,  e.g.  the  Electronic  Healthcare  Record  (EHR)            information  systems, 
+
+rather than  the  commodity  application  systems  (e.g.  Emails,  Calendars, Web  Meetings,  Offices, 
+
+etc.). 
+
+Then  it will  discuss  in  depth  the  state  of the  art  cloud  services  and  applications  in healthcare 
+
+domain   and  the  known  and   unknown  issues  with  these  services  and  applications,  in  both 
+
+technical and  business arenas. 
+
+ Following  that,  the  thesis   will   analyze   the   issues   using   systems   and   business   analytical 
+
+ instruments  to  fully  understand  the  issues  from  different  angles,  as  well  as  the  forces  and 
+
+ interactions with other critical factors  in the  business  ecosystem. 
+
+ Finally,  based  on  the  facts  and  analysis,  it will  propose  a framework  of a set  of  process  steps 
+
+ and  characteristics  that  can   be  applied  at  different  stages  during  the  transformation  from 
+
+ conventional  computing to cloud  computing. A case study on  cloud  based  EHR  adoption will  be 
+
+ used to demonstrate the application  of the  proposed framework. 
+
+                                                          -6- 
+
+----------------------- Page 8-----------------------
+
+2.   Background  Information 
+
+    2.1     Cloud Computing 
+
+    Cloud   computing    has  been   coined   as  an  umbrella   term   to  describe   a  category   of 
+
+    sophisticated on-demand  computing services  initially offered  by commercial  providers, such 
+
+    as  Amazon,   Google,   and   Microsoft   (Rajkumar  Buyya,   2011).   The  key  concept  of  Cloud 
+
+    Computing  is to  deliver computing resources  through  a global  network when and  where the 
+
+    customer   requests.  The   "cloud"   in  the  term  is  a  metaphor  for  computing   resources 
+
+    (hardware and  software) that companies  and  users access without the  need  to  know exactly 
+
+    where  that  hardware  and  software  is  
+                                             physically located.  It  is also  used as  a graphical symbol 
+
+    for  the   Internet   in   diagrams  of  computer   networks   to  depict  the  varied  technology 
+
+    infrastructures the cloud  conceals (Hugos  & Hulitzky, 2011). 
+
+    The  technology  advancement   in  grid   computing  and  virtualization  with  efficient  cluster 
+
+    management  has  made  it  possible for  cloud  computing  to  provide  large  scale  computing 
+
+    services  to  massive  user  bases.  Cafaro  and  Aloisio  (Cafaro  & Aloisio,  2011)  gave  a clear 
+
+    explanation  on  the  relationships  among  grids,  clouds  and  virtualization.  In short,  grids 
+
+    provide the  distributed  infrastructure  and  promise to deliver computing  power  on  demand, 
+
+    clouds  provide  computing  services,  business  applications  and  functions  through  grid,  and 
+
+   virtualization  decouples   cloud   services  from   physical   locations   by   hiding  the   physical 
+
+    characteristics  of computing  resources.  They  work  together to  achieve dynamic  resizing  of 
+
+   the  infrastructure,   balance  of  workload,   server  consolidation,  and  on-demand   resource 
+
+    provision. 
+
+    Cloud   computing  is a type  of  network  computing.  Network  computing   is not  new,  but 
+
+    compared  to the  conventional  network systems, cloud  computing  is unique in  the following 
+
+    areas. 
+
+   Design principles  &  
+                           architecture 
+
+    Many cloud  service  providers evolved from  traditional  IT  
+                                                                 companies. Traditional  IT  
+                                                                                             products 
+
+    (software,   hardware,   or   integrated   systems)   are  typically  designed   to   meet   specific 
+
+                                                 -7- 
+
+----------------------- Page 9-----------------------
+
+requirements   in  the  traditional  network  environment.   Even  though  many  traditional   IT 
+
+products  also  support  distributed  computing,  cloud  based  products  (software,  platform,  or 
+
+infrastructure)  emphasize  the  use  of  grid  computing  and  virtualization  technologies,  and 
+
+face  a different set of challenges  in terms  of scalability, security, and flexibility. For  example, 
+
+in  cloud  computing,  user  data  is  usually  saved   in  data   centers  that  are   independently 
+
+located,  and  are  shared  by  many  users.  The  cloud  service  provider  may  save  storage  by 
+
+allowing different  users  access  to the same  disk  drives,  but  in  turn  they  have  to  make sure 
+
+users are  not allowed to access other  user's data  without  permission. 
+
+ For  cloud  service  users,  taking Software  as  a Service  (SaaS)  applications as  an  example, the 
+
+design  and  development  of the  application  is usually  done  in  a web  environment  that  is 
+
+provided  by  the  cloud  hosting  company.  Design  is generally  limited  by the  capabilities of 
+
+                                       traditional  Software  Development  Environment  (SDE)   usually 
+low-level  programming that  a  
+
+has,  but instead,  cloud-based  SaaS  provides  pre-defined  high-level  components  or  objects 
+
+to  speed  up  the  development.  An  example  is the  development  of customized  Customer 
+
+ Relation  Management  (CRM)  applications  on  SalesForce.com  or  Force.com.  Because  of the 
+
+widely expanded  range of applications sharing on  the same  cloud, the  design  principles and 
+
+architecture  of the cloud varies  significantly from traditional  software applications. 
+
+Security  & data storage considerations 
+
+                                                                       dynamic  scalability, or the  ability to 
+ One  of the  core  design  principles of cloud  computing  is  
+
+ provision  and  decommission  servers  or  services  on  demand.  To  the  cloud  user,  dynamic 
+
+ scalability  can  be  achieved  by  using  third-party  data  storage  or  web  service  clouds  on  a 
+
+ subscription  basis.  However,  doing  that  requires  them  to  store  data  in  the  cloud.  Because 
+
+ the data  is physically stored  at  an  unknown  location,  extra  caution  is needed  to ensure  the 
+
+ security and  reliability of the data storage. 
+
+ Sometimes       regulations  and   government   policies  require   different  level   of  security  on 
+
+ different data sets.  For  example,  in the  healthcare  industry, the HIPAA  Security  Rule  posed  a 
+
+ bigger  challenge  to  safeguarding  protected  healthcare  information.  Meeting  the  security 
+
+ and  privacy  rules is critical to a successful  cloud  computing system. 
+
+                                                      -8- 
+
+----------------------- Page 10-----------------------
+
+ Service  delivery  & deployment  methods 
+
+ Whether  the  cloud is provided  as  an  internal corporate  resource (private cloud), as  a service 
+
+ hosted  by  a third-party  (public cloud),  or as  a hybrid  of these  two  models,  the traditional 
+
+ software     package  installations  through   CD         or  other  mediums,   are   changed  to  instant 
+
+ subscription  and  pay as you go.  Most cloud  services are  delivered  through web  browsers,  or 
+
+ in  some  cases  a  
+                     thin-client with  very simple  functions to serve  as the  user interface -  which 
+
+ is  
+    also  called  "Ubiquitous  Network Access"  -  services  are  made  available over the  network 
+
+ using  standard  mechanisms  which  support  a wide  range  of client  devices  (e.g.,  desktop, 
+
+ laptop,  PDA,   phone).  The   new  service  delivery  and  deployment  methods  give  users  the 
+
+ maximum  flexibility  and  portability on  the  use  of  the  services  they  paid  for  to  meet  the 
+
+ business volatility requirement.  However, the designer  and  the  developer should  also  know 
+
+the  limitations of a  
+                         web  browser or a thin-client they are restricted to. 
+
+New pricing  &  
+                     business models 
+
+The  ability to  scale  operations  up  and  down  smoothly  as  market  conditions  and  business 
+
+environments  change  is  
+                               one  of the  key elements for  companies  to stay  agile and  successful 
+
+in  today's  world.  IT  
+                          expenditures  as  one  of the  biggest capital  investment  to  a business  are 
+
+always  under  scrutiny when  it comes to financial  planning or  cost  reduction.  Use  of clouds 
+
+ helps  companies  of  different  sizes  to  change  from  a fixed  cost  model  to  a variable  cost 
+
+ model  in  terms  of IT  
+                           operating  expenses.  It  is very attractive to small  businesses or startups 
+
+that  are  starved  for  cash  when  they  are  expanding.  It  also  gives  enterprises  competitive 
+
+advantage  when  they  have the  luxury of scaling  up  and  down  quickly.  However, while the 
+
+ benefit  is obvious,  many  companies  are   reluctant  to  move   because  either  their  capital 
+
+expenditures  have  been  done  or  their  new  spending  model  has  yet  to  be  built  into  the 
+
+overall  business  processes  in the  company. 
+
+Benefits  of Cloud  Computing 
+
+ In a report  on  public sector  cloud  computing published  by the  Federal  CIO  Council  (Kundra, 
+
+2010), the  benefits of cloud computing  are  summarized  into six areas: 
+
+                                                     -9- 
+
+----------------------- Page 11-----------------------
+
+                                                                                   in which  a low initial 
+    "   Economical. Cloud  computing  is a pay-as-you-go  approach  to  IT,  
+
+        investment  is required  to  get going. Additional  investment is incurred  as system  use 
+
+        increases  and  costs can  decrease  if  usage  decreases.  In this way,  cash  flows  better 
+
+        match  total system  cost. 
+
+    "   Flexible.  IT departments  that  anticipate  fluctuations  in   user  load  do  not  have  to 
+
+        scramble  to  secure  additional  hardware  and  software.  With  cloud  computing, they 
+
+        can  add  and  subtract  capacity  as  its  network  load  dictates,  and  pay  only  for what 
+
+        they use. 
+
+    "    Rapid  Implementation.  Without  the   need  to   go  through  the  procurement   and 
+
+        certification  processes,  and  with  a  near-limitless  selection  of  services,  tools,  and 
+
+        features,  cloud  computing helps projects  get off the  ground  in  record  time. 
+
+    *    Consistent  Service.   Network  outages  can   send   an   IT department  scrambling  for 
+
+        answers.  Cloud  computing  can  offer  a higher  level  of service  and  reliability, and  an 
+
+         immediate  response to emergency situations. 
+
+    e    Increased  Effectiveness.  Cloud  computing frees  the  user from  the  finer  details  of IT 
+
+        system   configuration  and      maintenance,   enabling  them   to  spend   more  time  on 
+
+         mission-critical tasks  and  less time on  IT operations  and  maintenance. 
+
+    "   Energy  Efficient. Because  resources  are  pooled,  each  user community  does  not  need 
+
+        to  have  its  own  dedicated  IT infrastructure.  Several  groups  can   share  computing 
+
+         resources,    leading  to   higher   utilization   rates,   fewer   servers,   and  less  energy 
+
+        consumption. 
+
+Technology Adoption  Curve 
+
+Due  to  these  unique  characteristics,  many  companies  and  organizations  that  have  had 
+
+extensive  experiences with  conventional  network systems  are  tempted  to  maintain  current 
+
+technology  in  order  to avoid switching  risks or  "unknown"   risks. Very  often  it falls  onto the 
+
+shoulder of their consultants or contractors  (vendors) to  build the  business case  and  defend 
+
+the  benefits  of cloud  computing. While  cloud  computing  is a well-established  concept  and 
+
+encompassed  by the academic  community,  pioneer technology developers,  and  all  major  IT 
+
+service  providers, there  is still considerable  gap  between them  and  the  rest of the  business 
+
+                                                - 10- 
+
+----------------------- Page 12-----------------------
+
+world,   especially  in  the  traditional  sectors  such  as              manufacturing,  finance,   healthcare, 
+
+ governmental  departments,  etc.  It could  be an  extra  burden  to the vendors  to demonstrate 
+
+ and deliver the  benefits. 
+
+ While  it  is unclear  if  and  when   all  conventional  information  systems  will  transition  into 
+
+ cloud  computing, there  is a clear  trend  that  more  and  more  companies  and  organizations 
+
+ are  moving towards  to  cloud  computing. Just  like any other  new technology  or  innovation, 
+
+ this  transition  follows  the  typical  technology  adoption  curve  (Figure   1).   In  March  2011, 
+
+Avanade  commissioned  a survey  of  573  C-level  executives  in  18  countries.  The  research 
+
+ finds  cloud  computing  has  reached  it  first  milestone  as  a  mature  technology  (Avanade, 
+
+ 2011). According to the survey,  74% of enterprises  are  using some form  of cloud services. 
+
+       The Technology Adoption  Curve 
+       As captured  by Everett  Rogers  in  his book  <<Diffusion  of  Innovations>>. 
+
+                                                                  Cloud 
+
+                                                                  Computing 
+
+       Innovators      Early Adopters      Early Majority           Late  Majority       Late Adopters 
+
+                                Figure  1 Cloud Computing Technology Adoption  Curve 
+
+Different  business sectors  may fall  into different categories.  It is noticed by  experts  in Cloud 
+
+Computing  that  cloud  adoption  is stronger  in  small  businesses  and  big enterprises, while  it 
+
+stays very  low  in  middle sized  companies. The  explanation  is simple.  Small  companies  often 
+
+have  IT infrastructure shortages  and  limited  IT budgets.  IT is  
+                                                                                 considered  a pure  cost  instead 
+
+of a valuable  resource.  Cloud  computing  allows them  to use  sophisticated tools without the 
+
+trouble of acquiring and  managing a complicated  technological  infrastructure, and  pay at  a 
+
+price  that   is  metered  from          real   usage.    For   big  enterprises,  cloud   computing  can              be 
+
+                                                       -11- 
+
+----------------------- Page 13-----------------------
+
+leveraged  in   a different  way:  the  cloud  is considered  a solid  way  to  deal  with  variable 
+
+workload   and  to  delegate  services,  a viable  alternative  to  outsourcing.  More  and  more 
+
+private  clouds  are  used  internally  and  interact  with   public  clouds  to  exchange  data  and 
+
+services  in  a more  or  less transparent  way when  needed.  Medium  size companies typically, 
+
+have  a real  IT budget  including human  and  material  resources,  but  resistance to change and 
+
+outsourcing  make cloud computing a less favorite choice. 
+
+The   anticipated   business   benefits   in   terms  of  business  case,   financial  value,  strategic 
+
+direction   and  flexibility  provided  are   appreciated            by  organizations  worldwide   and  the 
+
+current  adoption  curve  confirms that cloud  computing  is here to stay  and  has  a potential to 
+
+                                    From  a vendor  side,  there  is still work  required to  improve  the 
+transform  business and  IT.  
+
+ understanding   of  cloud         computing   as      the   market      is  missing   a  clear   and      universal 
+
+ understanding  of what  cloud  computing  is, the  different  types  and  the  different  services. 
+
+                            departments  need  to  be  involved. As  maturity  increases and  offerings 
+ Both  business and  IT  
+
+ get  broader and  clearer, organizations  will further  expand  their cloud  sourcing  and vary the 
+
+ models they use. 
+
+                                                      - 12 - 
+
+----------------------- Page 14-----------------------
+
+     2.2       Healthcare Information Systems 
+
+     Just  like  in  all  other  industries,  healthcare  information  systems  have  gone  through  many 
+
+     changes  to  evolve from  verbal  descriptions  and  paper  based  manual  processes  to  modern 
+
+     computer  based  data  collection and  information  process systems.  Healthcare  information  is 
+
+     sensitive to  both  patients  and  physicians who  create  the  information  and  scientists who  use 
+
+     the  information  to  conduct  research.  Privacy  and  security  are  the  top  concerns.  In recent 
+
+     years,  there  has  been  increasing  demand  from  both  the  healthcare  community  and  the 
+
+     government  for  more  advanced  and  easy  to  use  Healthcare  Information  Technology  (HIT) 
+
+     systems,  in  order to  meet the  regulations and  rules established. 
+
+     Overview  of Healthcare Information Systems 
+
+     The  definitions  of  the  types  of  health  care  information  vary  by  different  organizations. 
+
+     According  to  (Wager,   Lee,   &  Glaser,   2009),  there   are   mainly  two  types  of  healthcare 
+
+     information: the  administrative  information,  and  the clinical information.  Focusing on  these 
+
+     two  types  of  healthcare   information,   HIT   systems  are   also  centered   on   administrative 
+
+     systems  or clinical systems. 
+
+                Type                                    Clinical                            Administrative 
+ Patient-Specific Information             Identification Sheet                    Identification Sheet 
+                                          Problem  List                           Consents 
+                                          Medication Record                       Authorizations 
+                                          History                                 Pre-authorization 
+                                          Physical                                Scheduling 
+                                          Progress Notes                          Admission/Registration 
+                                          Consultations                           Insurance  Eligibility 
+                                         Physicians'  Orders                      Billing 
+                                         Imaging  and  
+                                                        X-ray results             Diagnoses  Codes 
+                                         Lab  results                             Procedure  Codes 
+                                         Immunization  Record 
+                                         Operative Report 
+                                         Pathology Report 
+                                         Discharge Summary 
+                                          Diagnoses Codes 
+                                          Procedure Codes 
+Aggregate  Information                    Disease  Indexes                        Cost  Reports 
+                                         Specialized  Registers                   Claims  Denial Analysis 
+                                         Outcomes  Data                           Staffing Analysis 
+                                         Statistical  Reports                     Referral Analysis 
+
+                                                         - 13  - 
+
+----------------------- Page 15-----------------------
+
+                                          Trend  Analysis                            Statistical Reports 
+                                          Ad  hoc Reports                           Trend  Analysis 
+                                                                                     Ad  hoc  Reports 
+ Information Systems                       -   Contains  clinical or  health-        -   Contains  primarily 
+                                                related  information  relevant           administrative or financial 
+                                               to the  provider in                       data 
+                                               diagnosing,  treating and             -    Used to support the 
+                                                monitoring the  patient's care            management functions  and 
+                                                                                         general  operations of the 
+                                                                                          health care  organization 
+Application  Examples                      -    EMR/EHR  systems                     -    Patient administration 
+                                           -   Ancillary  information                    systems  (registration, 
+                                               systems (laboratory,                      scheduling,  billing, etc.) 
+                                                radiology, pharmacy, etc.)           -    Financial  management 
+                                           -   Telemedicine  and telehealth              systems  (payroll,  personnel 
+                                               systems                                    management,  accounts 
+                                           -    Medication administration                 payable, inventory 
+                                               systems                                    management,  etc.) 
+                                           -    Mobile  health  monitoring           -    Supply chain  management 
+                                               systems                                    systems 
+                                                                                     -    Office administrative 
+                                                                                          systems  (emails, document 
+                                                                                          editing, web  conference, 
+                                         I                                         I_     etc.) 
+                                  Table  1 Healthcare  Information and  Information  Systems 
+
+                    Healthcare Information Systems 
+     History  of  
+
+     The  history  and  evolution  of  HIT  is  intertwined with  the  health  care  environment  changes 
+
+     and  information  technology  development.  The  major  advances  in  information  technology 
+
+     and  significant  federal  initiatives  had  enormous  influence  on  the  evolution  of  healthcare 
+
+     information  systems.  For  example,  in   1980s  the  unveiling of  affordable  and  powerful  PCs 
+
+     promoted  the  use  of  HIT   in   small          healthcare  organizations,  and   in   2000s  the  federal 
+
+     stimulus  money caused  fast  pace  adoption of EHR  systems. 
+
+  Time        Healthcare  Environment                    State  of IT                         State  of HIT 
+
+ 1960s       -     Enactment of  Medicare         -    Mainframe                -   Administrative  systems 
+                  & Medicaid                           computers                -    Used  primarily  in  large  hospital 
+              -   Cost-based                      -    Centralized                  and  academic  medical centers 
+                   reimbursement                       processing               -    Developed  and  maintained  in- 
+             -     Focus on  financial needs      -    Few vendor-                   house 
+                  and capturing  revenues              developed                -    Data  processing was  primarily 
+             -     Building  mode                      products                      centralized on  mainframe 
+                                                I                             I_     computers 
+
+                                                             14- 
+
+----------------------- Page 16-----------------------
+
+ 1970s       -     Hospital growth and             -    Mainframes were          -    Increased  interest in  clinical 
+                  expansion                             still  in  use                applications 
+             -    Medicare  and  Medicaid          -    Minicomputers            -    Off-the-shelf systems  became 
+                  expenditures  rising                  became available              available through vendor 
+             -    Need to contain  health               and  more                     community 
+                  care  costs                           affordable               -    Shared  systems among  smaller 
+                                                                                      hospitals 
+ 1980s       -    Medicare  introduced             -    Unveiling of the         -    Expansion of clinical  information 
+                  prospective  payment                  PC                            systems in  hospitals 
+                  system for hospitals             -    Advent of Local          -   Affordable  and  powerful 
+             -    Medicaid and other                    Area  Network                 computers  became available to 
+                  private insurers follow               (LAN)                         smaller organizations 
+                  suit                                                           -    Distributed data processing 
+             -    Increased  Need for                                            -    Increased  integration of financial 
+                  financial  and clinical                                             and  clinical  information systems 
+                  information 
+ 1990s       -    Medicare  changes in             -    Unveiling of the         -    Vendor community  explodes 
+                  physician                             Internet                 -    Wide  range of HIT products and 
+                  reimbursement                    -    Internet                      services available 
+             -    Health care  reform                   revolutionized           -    Increased  use of Internet  by 
+
+                  efforts of Clinton                    how organizations             health  care organizations 
+                  administration                        communicate              -    Growing  interest in clinical 
+             -    Growth  of managed                   with  each  other,             applications 
+                  care  and  integrated                 market services,         -    Still relatively small growth  in 
+                  delivery systems                      conduct  business             adoption  of EMR systems 
+             -    Calls for adoption of            -    Cost  of hardware 
+                  computer-based  patient               drops 
+                  records 
+2000         -    HHS  calls for standards         -    Internet use             -    Infusion of HIT funding 
+and               on  EHR                               reaches  new level       -    National call for EHR  adoption 
+beyond       -    Spiraling health care            -   Voice  recognition        -    Regional  health information 
+                  costs                                 rebounds                     organizations 
+             -    Economic  upheaval  and          -    Bar  coding and          -    Increased  need for  point of care 
+
+                  growing  number of                    RFID                         clinical systems 
+                  uninsured                        -    PDAs and  mobile 
+             -    Federal  stimulus  money              computing 
+                  available for  HIT               -   Web  2.0 and 
+             -    New administration                    Cloud  Computing 
+
+                                                 I__   technologies            I 
+                    Table 2  History and  Evolution of  HIT - summary  based  on  (wager,  Lee,  & Glaser, 2009) 
+
+     Both  information technology  development  and  the  changes  in  healthcare  environment  are 
+
+     critical in  shaping the current  and future state  of HIT.  One  of the  recent and  most important 
+
+     IT development  is  cloud  computing,  which  we  have  discussed  in  section  2.1.  Next  we  will 
+
+                                                            - 15 - 
+
+----------------------- Page 17-----------------------
+
+    review  the  recent  most  important  legislation  and   regulations  that  shape  the  healthcare 
+
+    environment. 
+
+                                                                 Regulations 
+   Important Recent  Healthcare legislation  and  
+
+        1)   HIPAA 
+
+         In  1996,   Congress   passed   the  Health        Insurance   Portability  and   Accountability  Act 
+
+         (HIPAA)  in  hope of  improving the  portability and  continuity of health  insurance;  combat 
+
+        waste,  fraud,  and  abuse  in  health  insurance  and  health care  delivery;  promote  medical 
+
+         savings  accounts;  improve access  to  long-term  care  services  and  coverage;  and  simplify 
+
+        the  administration  of  health  insurance;  and  for  other  purposes  (NIST,               Effect  of  the 
+
+         HIPAA  Privacy  Rule  on  Health  Research).  In 2003  the  Title  Il of  HIPAA was  passed with 
+
+         additional regulations on the use  and disclosure of Protected  Health  Information  (PHI). 
+
+         The  HIPAA defines  a set  of  rules to facilitate  continuation  of  health  insurance  coverage 
+
+         among  American  workers  who  change  employers.  The  HIPAA  Security  Rule  specifically 
+
+         focuses  on  the  safeguarding  of  Electronic  Protected  Health  Information  (EPHI).              Under 
+
+         the  HIPAA Security  Rule,  each covered  entity'  must: 
+
+              *   Ensure  the  confidentiality,  integrity,  and  availability  of  EPHI   that  it  creates, 
+
+                  receives,  maintains, or transmits; 
+
+              *   Protect  against any  reasonably anticipated threats  and  hazards to the security  or 
+
+                  integrity of  EHPI; 
+
+              *   Protect  against  reasonably  anticipated  uses  or  disclosures  of  such  information 
+
+                  that are  not permitted  by the  Privacy  Rule. 
+
+         2)  FISMA 
+
+         In addition  to  HIPAA,  the  Federal   Information  Security  Management  Act  (FISMA)  also 
+
+         affects the  use  of  HIT.  FISMA  enacted  into  law  in  2002  defines three security  objectives 
+
+         for  federal  government  information  systems:  (1) Confidentiality,  (2) Integrity,  and  (3) 
+
+ Covered entities  include covered  healthcare  providers,  health  plans, healthcare clearinghouses, and  Medicare 
+prescription drug  card sponsors.  Details  on covered  entities can  be found  in the NIST  document. 
+
+                                                        - 16- 
+
+----------------------- Page 18-----------------------
+
+Availability. The  purpose  of FISMA  and  HIPAA was  to  establish  a uniform  set of federal 
+
+ standards  nationwide for  how  health  plans and  most  health  care  providers should  treat 
+
+ the  identifiable health  information that they receive from their patients. 
+
+ FISMA  applies to  all  federal  agencies  and  all  information  types.  Some  federal  agencies 
+
+ are  subject  to  the  HIPAA  Security  Rule  based  on  their  functions  and  use  of  EPHI.  All 
+
+ HIPAA  covered  entities,  which  includes  some  federal  agencies,  must  comply  with  the 
+
+ HIPAA    Security    Rule.   The    Security    Rule   specifically   focuses    on    protecting   the 
+
+ confidentiality, integrity, and  availability of  EPHI. 
+
+3)  ARRA   and  
+                  HITECH  
+                             Act 
+
+ HIPAA  is important from  a policy standpoint,  but  most of the  impetus  for  HIT  adoption, 
+
+ primarily  Electronic  Health  Records   (EHR),      comes  from   the  American        Recovery  and 
+
+ Reinvestment  Act   (ARRA)       stimulus  bill   in the  form   of  incentive  payments  through 
+
+ Medicare & Medicaid. 
+
+The  ARRA  was  signed  into  law  by  President  Obama  on  February  17,  2009  to  stimulate 
+
+the  U.S.   economy  and  simultaneously   promote  certain   policy  objectives.  It  touches 
+
+almost  every  aspect  of the  U.S.  economy.  It prevents  dramatic  state  cuts  in  Medicaid, 
+
+expands funding for  preventive  health care  services and  health care  research,  and  helps 
+
+the  unemployed buy  health  insurance.  Its  most  profound  effect on  doctors  and  patients 
+
+will  result from  its unprecedented  $19  billion  program  to promote the  adoption and  use 
+
+of  HIT  and  especially  EHRs  (Blumenthal,  2009).  Among  the  $19   billion, $17   billion  is in 
+
+financial  incentives for physicians  and  hospitals to  adopt and  use  EHRs,  and $2 billion for 
+
+ONC   to  put  support  systems  in   place  for  technical  help  and   improvements  and  to 
+
+authorize  a  
+              variety of tools for  building the  requisite infrastructure. 
+
+The  Health  Information  Technology  for  Economic  and  Clinical  Health  (HITECH)            Act  was 
+
+signed  as  a  part  of ARRA  to  promote the  adoption  of  HIT  by  physicians  and  hospitals 
+
+with   a  prescribed     timeline.   The    HITECH     authorizes    incentive    payments   through 
+
+Medicare  and  Medicaid on demonstrated  meaningful  use of certified  EHRs. 
+
+                                               17- 
+
+----------------------- Page 19-----------------------
+
+        What  is "meaningful   use  of  certified  EHRs"?   First  of  all,  to  qualify  as   certified  EHR 
+
+        technology,   a  system       must   be  tested   and  certified   by  the   Office  of  the  National 
+
+        Coordinator for  Health  Information Technology  (ONC).  The  ONC  keeps and  releases  a list 
+
+        of approved  EHRs  that  have been  determined  to  meet the  requirements  of "meaningful 
+
+                                                                                 2 
+         use". The  list is called Certified  Health  IT Product List  (CHPL)     . 
+
+        Secondly, the term  "meaningful  use"  means: the  use of a certified  EHR  in  a meaningful 
+
+         manner,  such  that  it  complies  with  a set  of  objectives.  In short,  meaningful  use  will 
+
+         require  that  providers  document  that  they  are  using  certified  EHR  technology  in  ways 
+
+        that can  be  measured  in quality and  in  quantity (Turner, 2011). 
+
+        The  Federal  government  provides  a pool  of  HITECH  funds to  pay eligible  professions  up 
+
+        to   $44,000   in     reimbursements       from     Medicare     and    $65,000   from      Medicaid     for 
+
+         meaningful  use  of  a certified  EHR   starting  in  2011.  It  is no  surprise  that  a swarm  of 
+
+        technology  vendors  started  to  promote  a vast  array  of technologies  designed  to fulfill 
+
+         the  HITECH   vision  of  integrating  advanced  technology  into  the  delivery  of  healthcare 
+
+         services.  In the  rush  to  implement  EHR  solutions  and  receive financial  incentives, many 
+
+         organizations  overlook  the  importance  of  selecting  an  appropriate  technology  rather 
+
+         than  a one-size-fits-all  solution.  However,  it  is very  encouraging  to  see   many  of  the 
+
+         solutions  on the CHPL  are  cloud computing  based  solutions. 
+
+         This   type   of  government       stimulation     has   played   an    essential    role   in   advancing 
+
+         technology  adoption  in  the  health  care  industry. While we  have  to  admit  the  apparent 
+
+         benefits for the quickened  industry wide  movement  towards  using  newer technologies, 
+
+         we   should   also   note  that  it  causes   a  cyclic  effect   on   certain  types  of  technology 
+
+         development. This  cyclic effect of government stimulation  plans will  be  discussed  later. 
+
+2The full  list of approved  venders of CHPL  can  be found  here:  http://onc-chpl.force.com/ehrcert 
+
+                                                       - 18- 
+
+----------------------- Page 20-----------------------
+
+     4)  ACA 
+
+     The  Affordable  Care  Act  (ACA)  was  enacted  on   March  23,  2010.  It  contains  some  tax 
+
+     provisions that  became  effective  in  2010  or 2011,  with  more to  be  implemented  in  the 
+
+     next several  years. 
+
+     According  to  a 2011  survey,  the  reforms  at  the  ACA  in  the  U.S.            could  stimulate  the 
+
+     reduction  of the  number of underinsured  adults  in the  country  by  70  percent  upon the 
+
+     increase of the  affordability of care for people  (Cathy  Schoen,  2011). 
+
+     According   to   another  survey   (The   Kaiser         Family   Foundation   and       Health    Research 
+
+     Educational  Trust,  2011)  the  two  most  popular  provisions  of  the  ACA   reform   law  - 
+
+     allowing  young  adults  to  stay  on  their  parents'   insurance  policies  until  age  26  and 
+
+     requiring  health  plans to offer some  preventive service for free  -together   accounted for 
+
+     about  2%  
+                  increase  in  insurance  premiums.  However, the  average  annual  premium  was 
+
+     8% higher for  individual  coverage,  or  9% higher  for  family  coverage.  The  increase  was 
+
+     only 3%  
+                in 2010. 
+
+     At  the  same time,  one  study  (The  Commonwealth   Fund,  2011)  appeared  in  the journal 
+
+     Health    Policy   shows     that   the    U.S.   ranked     last  among      high-income      nations   on 
+
+     preventable deaths. 
+
+     Since  the  birth  of the  ACA,  criticism  that  the  ACA  has  caused  a  rise  in  health  benefit 
+
+     premiums  has  never stopped.  It is understandable.  Many  people believe that Americans 
+
+     are   paying  higher  premiums  with  less  quality  in  return.  Adding  more  people  to  the 
+
+     insured  pool seems to  make things worse. 
+
+Issues of legislation  and Regulations 
+
+The  HIPAA,  FISMA,  HITECH,  and  ARA  were  formed  at  different times with  different  focuses. 
+
+But  they are  also  interrelated,  e.g. the  HITECH  Act  contains  a number of important changes 
+
+to  HIPAA  privacy and security  requirements for  physician  practices (Shiner,  2010). They also 
+
+share   the   common        goal   to   promote      the   development       of  a  nationwide        healthcare 
+
+information  network and  to create a helpful  and  holistic medical  records system  to  address 
+
+                                                    - 19  - 
+
+----------------------- Page 21-----------------------
+
+      wide  range of healthcare  issues. As  the  population  ages  and  healthcare  costs soar,  making 
+    a  
+
+    the  healthcare  service  more  efficient  and  effective, as  well  as finding the  means to  reduce 
+
+    costs, are the top  priorities for the  healthcare  industry. 
+
+     However, we  should  also  note that  this  legislation  and  regulations  have  side  effects to the 
+
+     healthcare  community.  The  first  issue  is the  lack  of  enforcement,  or  inconsistency when 
+
+    there  is enforcement.  One  goal  of the  regulations  is to  maintain  an  appropriate  balance 
+
+     between  protecting  individual  privacy  and  the  ability to  use  the  de-identified  healthcare 
+
+     information  for  the  common  good.  But  sometimes  those  laws  don't  match  up  and  cause 
+
+     confusion.  The   HHS  delegated  to  the  Administrator,  Centers  for  Medicare  and  Medicaid 
+
+     Services  (CMS),      the  authority  to  investigate  complaints  of  noncompliance.  The  current 
+
+     "complaint-driven"  enforcement  process  leaves  many  unturned stones.  CMS  has  recognized 
+
+    the  need  for  an  enhanced  enforcement  process  whereby  CMS  would  proactively address 
+
+     compliance   issues  through  a  compliance  audit   process.3  The   new  process  is yet  to   be 
+
+    developed. 
+
+    Another   issue  is the  problems  caused  for  the  secondary  uses  of  PHI.                     All   individually 
+
+     identifiable  health  information  held  or transmitted  by  a covered  entity  is protected  under 
+
+    the   Privacy   Rule.   The      regulations   allow   the   use       of   non-identifiable  or   de-Identified 
+
+     information   for   secondary         uses    such    as   for   scientific   research,     administrative       use, 
+
+     comparative   performance           use,   etc.  The    Privacy   Rule   does   not  supersede   either   FDA 
+
+     regulations  on  research  or  the  Common   Rule4. "De-identified"   PHI  is under  no  disclosure 
+
+     restrictions.  It  is more  acceptable  to  use  the  data  for common  good  (e.g. for  research),  but 
+
+     many  businesses  also  use  the  data  for  commercial  purpose  such  as  service  targeting  and 
+
+     advertising.  The  current  regulations  are  not  always  clear  on  the  restriction  of  secondary 
+
+     uses of PHI. 
+
+                         the variability  in  the  interpretation  of the  HIPAA  Privacy  Rule. The  Covered 
+     A  third  issue  is  
+
+     Entities  are  a  limited  set  of entities.  If the  entity  that  is using  the  health  care  data  is not 
+
+3   https://www.cms.gov/Enforcement/      retrieved on Jan  27,  2012. 
+                        formally called  "Federal  Policy for the  Protection of Human Subjects".  More  information on 
+4 The  Common  Rule is  
+the Common  Rule can be  found on  HHS.gov "http://www.hhs.gov/ohrp/humansubjects/commonrule/index.html" 
+
+                                                          -  20- 
+
+----------------------- Page 22-----------------------
+
+ covered  by  HIPAA,  then  they  are  only  concerned  when  access  to  information  is from  a 
+
+ covered  entity.  It  causes  limitations  on  some  important  types  of  research,  such  as  chart 
+
+ reviews,  retrospective  cohort  studies,  population-based  case  control  studies,  multi-center 
+
+ studies, and  so  on. 
+
+ However,  despite  all  the  issues  and  concerns  about  the  legislation  and  regulations,  they 
+
+ sent  strong  positive signals  to the  healthcare  industry to  build  a better and  more  organized 
+
+ healthcare information  network using advanced technologies. 
+
+ On  a Pragmatic  
+                     Level 
+
+ Reducing  health  care  costs while  providing  better  health  care  services  is  
+                                                                                         the  ultimate  goal, 
+
+ and  it are  not easy to achieve.  Health care  is  
+                                                      a  
+                                                        far-reaching  issue  because  it is a basic right of 
+
+ human  beings and  it affects everyone's  daily  life. At the  national  level,  it became  one  of the 
+
+ most  critical tasks  and  challenges  for the  administration  and  the  legislation.  Because  of the 
+
+ importance  of the  issue, while  the  politicians and  the  media  are focused  on  the  high-profile 
+
+ debates,  many  medical  providers,  scientists and  researchers  are  spending  lots  of their time 
+
+ and  energy trying to tackle on the  challenges at pragmatic  level. 
+
+ Developing and  promoting  cost  effective  HIT  systems  is one of the  areas  that can  positively 
+
+ impact health care  reform. The  adoption of the  EHR  can  increase  efficiency and  improve the 
+
+quality  of  healthcare.  A better connected  information  network  could  reduce  losses  due  to 
+
+fraud.  Although  HIT  by  itself cannot  solve the  problem  of  high  healthcare  cost,  developing 
+
+an  interoperable  healthcare  information  network can  provide a platform  to  implement  real- 
+
+time  controls.  There   is a  study  shows  that  such   an   infrastructure   investment  has  the 
+
+potential to  produce  significant national  savings  (Parante,  Mandelbaum,  Hanson,  Cassidy,  & 
+
+Simborg,  2008). 
+
+As   discussed  above,  users  of  PHI   can   range  from   patients,  service  providers,  insurance 
+
+companies,  to  researchers  and  government  agencies.  There   is a tremendous  amount  of 
+
+data  accumulated  or  being  accumulated  over  time.  Different  users  need  data  mining  and 
+
+analysis   for   both   research    and    interventional    usages.    One   example      is  the   Scalable 
+
+Nationwide  Network for  Effectiveness Research  (SCANNER)  study, funded  by the Agency for 
+
+                                                  -21- 
+
+----------------------- Page 23-----------------------
+
+   Healthcare  Research  and  Quality  (AHRQ)  and  led  by  Principal  Investigators  at  UCSD   & MIT, 
+
+  which  evaluates  effectiveness  of  clinical  interventions  in  real  populations. The  SCANNER 
+
+   project will develop  a scalable,  secure  network for  comparative  effectiveness  research  that 
+
+   allows  for flexibility in disclosure  policy and  data  sharing  among  participant  sites.  This  kind 
+
+   of study  relies  on  the  data  collected  in  the  process  of care  across  different  time,  location, 
+
+  format, and  very often on  different network systems. 
+
+   Cloud  computing  is considered  a suitable  solution  for these  requirements  by  many experts 
+
+   in   the  field.   It   is scalable,   easier  to  implement,   and   easier  to  share.         However,  most 
+
+   healthcare  or  clinical  organizations  are  relatively  new  to  cloud  computing  comparing  to 
+
+   government  agencies  and  large  providers. The  challenge  is how to overcome  the  concerns 
+
+   these  healthcare  organizations   have  on:   1) How  security,  safety,  and   reliability  of  data 
+
+   storage  in  the  cloud  are  being  ensured;  and  2)  How  to  work with  the  existing  healthcare 
+
+   networks  and  standards,  such  as   Nationwide  Health  Information  Network  (NwHIN)   and 
+
+   Health  Information  Exchange  (HIE)  vendorss 
+
+   NwHIN   seeks  to   provide  a  nationwide  interoperable   health   information   infrastructure 
+
+                                                                                                      almost  always 
+   (network  of networks) for  secure  data  exchange over  the Internet.  NwHIH  is  
+
+   deployed   as     the   CONNECT        Gateway.      CONNECT       is  open   source      software   with   three 
+
+   components:   1) Gateway,  which   implements  NwHIN  specifications;  2)  Enterprise  Service 
+
+   Platform,  which  enables  connections  to  the  Gateway;  and  3) Universal  Client  Framework, 
+
+   which  provides  a development  platform  for end-user  applications. 
+
+   This  landscape  is changing as  HHS  is now  pushing  NwHIN  Direct.  NwHIN  Direct  describes  a 
+
+   set  of  standards,  services  and  policies  to  guide  the  development  of  secure   health  data 
+
+   exchange  over the  Internet.  It  is a much  simpler  and  less  capable  solution  downsized from 
+
+   NwHIN  since  NwHIN  has  proved to  be  too complicated.  "While  CONNECT  was  developed  to 
+
+   meet the  needs  and  requirements  of government  agencies  and  large  organizations,  NwHIN 
+
+   Direct  focuses  on  smaller  entities, such  as  physician-to-physician  connectivity.  It  builds  off 
+
+   CONNECT  to  offer  an  additional  set  of  standards  and  specifications  to  support  point-to- 
+
+E.g.  InterSystems, Axolotl,  Medicity, DBMotion,  etc. 
+
+                                                        -  22  - 
+
+----------------------- Page 24-----------------------
+
+point interactions for  meaningful  use  of HIT,  " says  Doug  Fridsma,  M.D.  and  acting director 
+
+of the  office  of standards  and  interoperability in  the  Office of the  National  Coordinator for 
+
+HIT (Goedert, 2010). 
+
+Many of these  issues  represent  both technical  and  business challenges.  Evaluation  of these 
+
+issues  can  be very  difficult when  they face  a new project.  It is critical for  decision-makers to 
+
+choose the  optimal  approach  early on  in the  project to ensure  its final  success. 
+
+                                                         -  23 - 
+
+----------------------- Page 25-----------------------
+
+3.   System  Analysis 
+
+     3.1       The Healthcare Information Technology  (HIT)  Ecosystem 
+
+                                                                              but  it  is a subset  domain  of  IT. Many 
+     As  the  name  suggested,  HIT  is in  the  domain  of  IT,  
+
+     generic  IT developments  can  be  directly  applied  to  HIT  systems.  There  are  also  healthcare 
+
+     domain   specific  characteristics  that  differentiate                  HIT   systems  from   other  types  of   IT 
+
+     systems.  Within  HIT,  there  are  also  numerous  sub-systems  that  make  up  the  entire  core 
+
+     functionalities  supporting  healthcare  information  systems'  needs,  e.g.  EHR  is one  of them. 
+
+     For  the  purpose  of  refining the  discussion  in  this  thesis,  the  scope  of IT, HIT,  and  EHR  is 
+
+     illustrated in  Figure  2. 
+
+           IT 
+
+             Hardware  & 
+              Networks                 IT 
+
+              Servers  &           connectivity & 
+              Operation                Seuiy             EHR 
+              Systems 
+                                  Exchangeability  &    SInteroperabily                             Connection  to Lab 
+
+             Commodity                                      Clinical  Data       Analytic Tools     and other external 
+            Applications                   Health            Collection                                  sources 
+            (email,  office,       Relat       h  
+          web  conference,         Related  Systems 
+                etc.) 
+
+                                                 Figure  2 System  Scope  (Original) 
+
+      HIT  as  a system  has  all  elements to  be  an  Ultra-Large-Scale  (ULS)   system  by  the  measures 
+
+     of:  the  number  of people employing the  system for different  purposes; the  amount of data 
+
+     stored,       accessed,       manipulated,         and     refined;      the     number        of    connections         and 
+
+      interdependencies among subsystems;  and the  number of software and  hardware  elements 
+
+      (Northrop  & AL,  2006).  The  large  HIT  system  affects  virtually  all  players  in  the  healthcare 
+
+     community.  It is such  a broad technology that complementary  investment  in  a broad  set  of 
+
+      areas  is required  to  maximize  the  value  of HIT. A  study done  by  RAND  Corporation  (Bower, 
+
+                                                              -  24- 
+
+----------------------- Page 26-----------------------
+
+2005)  compared the  diffusion of HIT to  IT  
+                                                        diffusion  in  other  industries and  indicated that  HIT 
+
+ is definitely  not  a stand-alone  or  plug-and-play  type  of benefit,  it  is much  more  effective 
+
+when  combined  with  vigorous competition  and  deregulation,  and  when  used  appropriately 
+
+ it can  deliver dramatic changes in  the overall  delivery of care. 
+
+Healthcare Entities 
+
+Compared  to other types  of information  technologies,  HIT  has  its own  characteristics.  First 
+
+of all,  it is important to  understand the complexity of the  healthcare  network. As  illustrated 
+
+in  Figure  3, HIT systems  interact with  a broad span  of healthcare entities. These  entities  play 
+
+diversified  roles  and  they  must  cooperate  with  each  other  in  order  for  proper  healthcare 
+
+information  to  be  created,  maintained,  transmitted,  and   utilized.  These  entities  are  the 
+
+owners of the HIT systems,  at the same time they are also the customers. 
+
+                                                         overnment 
+                                                        Agencies 
+
+                                           Figure 3  Healthcare Entities (Original) 
+
+                                                        -  25 - 
+
+----------------------- Page 27-----------------------
+
+Another  important  characteristic  is the  uneven  use  of  information  technology  in  different 
+
+healthcare  entities.  While  some  hospitals  are  using  advanced  computing  and  information 
+
+systems to  provide  modern  services, some other  health care facilities  may still rely on  paper 
+
+based     manual      processes   to   collect   data.   To      build   a  reliable   HIT     infrastructure,  the 
+
+development  and  advancement  of  HIT  cannot  be  locally focused.  Because  the  healthcare 
+
+entities  are  interconnected to  each  other, healthcare  information  and  other  data  has  to  be 
+
+communicated  and shared. 
+
+Market Structure 
+
+ Market structure is defined  by the number and  size  of the firms  in the  market;  the ease with 
+
+which  firms   may  enter  and   exit  the   market;  the  degree  to  which  firms'   products  are 
+
+differentiated;  and the  information available to  both  buyers and  sellers  regarding  prices and 
+
+ product  characteristics.   Market  structure   characteristics  determine   competition,  which 
+
+ ranges  from  perfect  competition  where  there  are  many  small  sellers  and  many  buyers,  a 
+
+ homogenous  product  and  everyone  is a price-taker, to  a pure  monopoly  where  there  is only 
+
+ one supplier or  a monopsony, a market with  only one  buyer. Between  these extremes  there 
+
+ are  other  structures such  as  monopolistic competition  (many  buyers and  many  sellers with 
+
+ a differentiated  product)  and  oligopoly with  a few  sellers  varying  in  size  and  power  in  the 
+
+ market.  The      ideal  economic  structure   is  perfect   competition  which   has   the  following 
+
+ characteristic:  many  sellers and  many  buyers  and  each  one  individually too  small  to  affect 
+
+ price levels so they are  all  price-taker not  price-sellers (Mwachofi  & AI-Assaf,  2011). 
+
+ The  HIT  market structure  is complicated.  As  we  have  discussed,  HIT  is an  ultra  large  system 
+
+ with  a large  amount  of players.  Each  of the  healthcare  entity segments  (as  shown  in  Figure 
+
+ 3)  is big  enough  to  form  its  own  market.  For  example,  the  health  care   receivers  have  a 
+
+ consumer-oriented  market with  products  range  from  home  care  devices to  on-line  health 
+
+ condition self-assessment,  etc. 
+
+ The  healthcare  provider  market can  be  segmented  into  large hospital  (>200  beds),  midsized 
+
+ hospitals  (100~200  beds),  small  hospitals  (<100  beds),  and  physician  practices. Within  these 
+
+ segments,  the  large  and   midsized  hospitals  often  behave  more  like  standard  enterprise 
+
+                                                       -  26- 
+
+----------------------- Page 28-----------------------
+
+ customers     in   the  macro     IT  space,  while   small    hospitals  and     physician   practices  are 
+
+ demonstrably  more  adverse  to  significant  capital  expenditures  (Harding,  2009).  The  HIT 
+
+ vendors   have   become   associated   with   specific   market   segments.            For   example,   large 
+
+ companies   like  Allscripts,  Cerner,  and   Epic  are  the   main  vendors  for  the  large  hospital 
+
+ market.   McKesson   is the  dominant  player  in  the   midsize  hospital   market,  and   smaller 
+
+ hospitals  are  predominantly served  by companies  such  as  Computer  Programs  and  Systems. 
+
+Allscripts   is the  best  known   name  in  the  physician  practice  market,  which   is the  most 
+
+ numerous and fragmented  market segment. 
+
+ The   RAND   study   (Bower,  2005)   also   concluded  that  there  were   neither  empirical   nor 
+
+ theoretical  reasons  to worry  about too  many  or too few  buyers or sellers  in  the  HIT  market. 
+
+ There   are   a  substantial   number  of  HIT  suppliers   providing  various   HIT   products.  The 
+
+ entrance  barrier  is low as  it is relatively easy for  new  players to find  niche  markets  in  HIT to 
+
+ start their ventures. 
+
+The  EHR  market  has  become  a more  condensed  market  however.  In 2002,  7 suppliers  had 
+
+ 74%  of the  EHR     market  and  the  remaining  26%  were  composed  of  smaller  players  and 
+
+ home-grown  systems  (Bower,  2005).  Today,  the top four  EHR  vendors  made  up  80% of the 
+
+ EHR  market, with  hundreds  of smaller  players  in  the  remaining  20%.  We  see  mergers  and 
+
+acquisitions  are  still happening among  the  EHR  venders,  e.g.  Allscripts  merged  with  Eclipsys 
+
+ in 2011. 
+
+We    should     also  notice   the    presence     of   Health   Center    Controlled     Network   (HCCN) 
+
+organizations. According  to the  Health  Resources  and  Services  Administration  (HRSA,  HHS), 
+
+a  HCCN     is "a  group  of  safety  net  providers  with  a  minimum   of  three  collaborators  or 
+
+members  collaborating  horizontally or vertically to  improve access  to care,  enhance  quality 
+
+of care,  and  achieve  cost efficiencies through  the redesign  of practices to  integrate services, 
+
+optimize   patient   outcomes,   or        negotiate   managed       care   contracts   on    behalf   of  the 
+
+participating  members."        These   HCCN      organizations  assume       responsibility  for   research, 
+
+development,   negotiations  and   vendor   management   on               behalf  of  multiple   healthcare 
+
+facilities  in  terms  of  developing  and/or  adopting  new  HIT  systems.  By  centralizing  these 
+
+                                                   -27- 
+
+----------------------- Page 29-----------------------
+
+                                                                                  spending  and outsourcing. 
+ responsibilities, they can  achieve economy  of scale  in terms  of IT  
+
+         an  important  characteristic that will  be further  discussed in  later sections. 
+This  is  
+
+Business Model 
+
+There  has  been  a lot  of talk  of transitioning toward  a subscription  model  for  HIT  to  better 
+
+align  the  cash   outflows  associated  with   purchasing  a  system   with  the   Medicare  and 
+
+ Medicaid  incentive  payments.  In the  physician  practice  or  ambulatory   market,  we  have 
+
+already  seen the  software-as-a-service take  hold  (The Wall  Street Transcript,  Aug  10,  2009). 
+
+The  emergence  of the  cloud  computing  model  of  product  delivery  is compelling  for  small 
+
+ hospitals and  physician  practices,  because  it allows  them  to  match  their  expenditures  with 
+
+their revenue stream while avoiding big  upfront HIT investment. 
+
+The   increased   prevalence  of  cloud  computing  also  pushes   HIT  vendors  to  explore  and 
+
+ expand     more  types  of  cloud   computing   offerings.   However,  for  large   enterprise-sized 
+
+ healthcare   providers,   in-house        perpetual   license   products  continue  to   be   considered 
+
+ preferred  option  because of their existing investments and  sizable  IT department. 
+
+ Understanding  the  HIT  ecosystem  and  integrating  the  relevant  information  together  will 
+
+ enable  new  information  technology  adoption  to  be  better synchronized  with  the  real-time 
+
+ needs  of  the  healthcare  network  in an   economically  feasible  context.  Although  we  will 
+
+ emphasize the  cloud  computing  aspects  in  our future  discussion, we  should  also  note that 
+
+ the same  philosophy is applicable to any types  of new technology adoptions. 
+
+ 3.2      System Architecture 
+
+ Cloud  computing services are  offered  most commonly  in the following ways: 
+
+      *   Infrastructure-as-a-Service  (laaS):  storage  and  computing  resources  as  a service. The 
+
+          main  advantages  are  lower costs,  increased  flexibility, and  the ability to  rapidly start 
+
+           up   and   shut  down   services.   This   type  of  service   also   helps   moderate   capital 
+
+          expenditures   by      reducing  the   need   for   on-site   data   center   infrastructure   and 
+
+          computing  systems. 
+
+                                                     -  28- 
+
+----------------------- Page 30-----------------------
+
+        e       Platform-as-a-Service  (Paas):   tools  and  environments  to  build  and  operate  cloud 
+
+                applications and  services. This  is newer  in the  marketplace,  but adoption  is expected 
+
+                to increase  significantly over the  next few years. 
+
+        *       Software-as-a-Service  (SaaS):   on-demand   use  of  software  over  the   Internet.  This 
+
+                type  of  services  has  been  on  the  market  for  several  years,  and  has  the  greatest 
+
+                uptake so far. 
+
+        *       IT-as-a-Service  (ITaaS):  or sometimes  is called  Business  Process  as  a Service  (BPaaS). 
+
+                This  service  type  combines  the  application  elements  of  cloud  computing  with  a 
+
+                human  aspect. The  main  difference  from  traditional                                                          IT  
+                                                                                                                                      outsourcing  is the fact  that 
+
+                the   human   resources   providing  the   ITaaS                                               service   are   pooled   as  well                              between 
+
+                different  clients. 
+
+                 IaaS                                          PaaS                                            SaaS                                           ITaaS 
+    Infrastructure-as-a-Service                       Platform-as-a-Service                          Software-as-a-Servi ce                              IT-as-a-Service 
+
+         Business Process  
+                         Outsourcing.        eel4       Business Process Outsourcing.                   Business  
+                                                                                                                Process Outourcing,       L   l        Business Priocess  
+                                                                                                                                                                       Outsourcing.       Lel4 
+                  IlagdServices                              Managed Sevices.              LeNltbuieged              Services.                              tsbaged  Services. 
+        Business  
+                 & Infornatics  
+                             Services                   Business & iconfnatics  
+                                                                            Servioes                   Business  
+                                                                                                                & kdomaln    evie                      Business &  fosnation Servioes 
+
+               Q   *(                            2  
+                                            Level                                          Level 2          j"  
+                                                 3          Software                                              e~aaedSLevel  
+                                                                    as a  Servic           Level 3         Softw    sa  e                 Level 2                                         Level 2 
+                                                                                                                                          Level 3          Software as a Service.         Level  
+                                                                                                                                                                                               3 
+     E  a      d  lud       icemputing             serv                 ervicel              a          d       Related Servicelo                          and Related  
+                                                                                                                                                                      Services 
+
+            Cloud Developiten, SaS                         Ciud  Developmert, SabS                       u  Cicud  evelopta  
+                                                                                                                        ent  S a                          Cloud Development,  
+                                                                                                                                                                            SaS 
+         integration, Services Hus,  e.g..  Level 2      Integration,  
+                                                                   Services Hubs. e.g..    Level 2      Ictegraticn.  
+                                                                                                                  Services Hubs, e.g.,    Level 2       integration.  
+                                                                                                                                                                  Services Hubs. e.g..    Level 2 
+           Bitin.  Secuityi. PMibklt.  
+                                and                       Billing. Security,  
+                                                                        Milbity, and                     Biling, Security,  
+                                                                                                                       hnbit,  and                       Billing. Securityr. tolobtfit.  
+                                                                                                                                                                              and 
+                Related Services                                Related Services                              Related Services                                Related Srvices 
+
+              Cloud  
+                    111rstutn               Lee                                           Lee  I             Cloud, Inrscture,  
+                                                                                                                     Leve                       I            lu     msmuu                 Level  
+                                                                                                                                                                                               1 
+          e .  Hesting.  
+                       Execution acid                     e.g. Cue                                       etg.                             Leg 
+             Storage, Aid  Related                           Storage.  AidRlated                            Storage,  
+                                                                                                                    And Related                             Storage, Aid Related 
+                   Services                             Figure Services                                          Services  
+                                                                   4n Sysatem  Arhtetr                (itan,          2009).                                     Sr~e 
+
+                                            LevelS0                                        Level  
+                                                                                                0                                         LevelS0                                        Level  
+                                                                                                                                                                                               0 
+
+                                                                                                                                                       Source:  Saugtuck  Technology 
+
+                                                         Figure 4 System  Architecture  (Bittman,  2009) 
+
+                service remakin             sigifca                  tinads  asstbusiness                            ueof            cluoting                             solut       ionsan 
+
+Each         cloud   computing  service   model   has   a  different  level   of  awareness   and   business 
+
+acceptance.  At  the  moment,  software-as-a-service  is  
+                                                                                                              confirmed  as  the  most  popular service 
+
+model  (Deloitte,  2011).  This  is supported  by  the  uptake  of  CRMV,                                                                   Collaboration  and  other 
+
+applications   in   the   cloud   by                               businesses.               Platform-as-a-service                          and        infrastructure-as-a- 
+
+service  are   making  significant   inroads  as                                            business   usage  of  cloud   computing  solutions 
+
+becomes  more  sophisticated. 
+
+                                                                                      -  29  - 
+
+----------------------- Page 31-----------------------
+
+There  are  also  several  distinct  deployment  models  for  business  use  of  cloud  computing, 
+
+including: 
+
+     "   Public cloud:  Public cloud  computing  uses the  public internet and  shared  computing 
+
+         resources to deliver  services  and  capacity on  demand.  This  model  uses  one  or  more 
+
+         data  centers  that  are  shared  among  multiple  customers,  with  varying  degrees  of 
+
+         data  privacy  and   control.  From  the  customer's  perspective,  using  public  cloud  is 
+
+         similar   to  outsourcing,  except  the   scalability   is  greater   and   the  billing  model 
+
+         resembles a utility. 
+
+     *   Private   cloud:   Private  cloud   computing   architectures   are   modeled   after  public 
+
+         clouds,  but  they're   built,  managed,  and   used   internally  by  an  organization.  This 
+
+         model  uses  a shared   services  model  with  variable   usage  of  a common   pool  of 
+
+         virtualized  computing resources.  Data  is controlled within  the organization. 
+
+     *   Hybrid   cloud:  This   is  a  mix  of  public   cloud   services,   private  cloud   computing 
+
+         architectures,  and   classic   IT infrastructure,  forming  a  hybrid   model  to  meeting 
+
+         specific  needs.  Static  hybrid   cloud  computing  does  not  share  data  and  services 
+
+         between  the  public  and  private  components.  Dynamic  hybrid  cloud  computing  is 
+
+                                                                                      they are  located 
+                           way that  data  and  services are  interchangeable  as  if  
+         architected  in  a  
+
+         in  the  same  virtual  operating  system.  Supplier  relationship  management  is a good 
+
+         example  of an  application that fits well  with a hybrid  model. 
+
+These  system  architectures  and  models  are  applicable to cloud  computing  in  all types  of  IT 
+
+ environment,  including HIT. 
+
+ 3.3     Business  Dynamics 
+
+ In previous sections, we  mentioned  the  cyclic  effect  of government  stimulating  acts  on  HIT 
+
+ development.  To  be  more  specific, when  the  Federal  or  State  government  passes  laws  or 
+
+ stimulating  plans  to  promote  advanced  technology  adoption  in   healthcare  by  providing 
+
+ incentives to  individuals  or  institutions,  it will  inevitably  create  a  rush  to  implement  the 
+
+ technology  being  promoted.  These  laws  and  acts  can  make  enormous  strides  in  advancing 
+
+                                                -30- 
+
+----------------------- Page 32-----------------------
+
+technology adoptions,  but  the  strides  sometime  can  be  so  large that the  whole  body  may 
+
+ lose  balance when  the  legs move too fast. 
+
+Take the  HITECH  Act  as  an  example.  Many organizations  have adopted  certified  EHR  quickly 
+
+in  order to qualify for the incentives.  However, hospitals or  healthcare facilities have  unique 
+
+workflows,  clinical  concerns,  and   limitations  of  existing  infrastructures.  During  the  quick 
+
+adoption  wave,  the  drivers  that  should   motivate  the  organization  to  implement  health 
+
+information  technology  shift  from   improving  clinical  care  and   practice  to  achieving  the 
+
+HITECH      incentives.  As   a  result,  understanding  of  the  organizations'   specific  needs  and 
+
+requirements,  incorporating  of  physicians'  and  user  groups'   inputs,  and   integrating  with 
+
+existing IT infrastructures and systems, will  become secondary priorities. 
+
+No  EHRs  are  designed to  operate  in  isolation.  If the  above  concerns  were  not addressed  at 
+
+the  beginning of the  adoption, sooner or later, they will  become such  a big obstacle that the 
+
+players  in  the  field  have to  stop  and  take  a step  back to  revaluate  them.  That  will  be  the 
+
+time we  see  a drawback  of the  rapid growth  in  new technologies. 
+
+Figure  5 shows the effect of government stimulation  act on technology adoption curve. 
+
+  Innovators        Early Adopters         Early Majority              Late  Majority         Late Adopters 
+
+ Figure  5 Government Stimulation Act  Effect on Adoption  Curve 
+
+                           Figure 5 Government  Stimulation Act Effect  on Adoption  Curve 
+
+                                                       -31- 
+
+----------------------- Page 33-----------------------
+
+4.  Findings - The framework 
+
+                                                                                            to  research  and 
+As we  stated  in  the  proposal  of this thesis,  the  purpose of this  research work  is  
+
+define  a framework  for  cloud  computing  adoption  in  healthcare  information  systems  when 
+
+moving forward  from  traditional  computing  approaches.  Users  of  this framework  can  be  the 
+
+cloud  providers  and  developers  (the Vendors),  or  the  network  computing  service  seekers  (the 
+
+Clients). 
+
+To  make the framework  a complete approach,  we  looked at: 
+
+     "   The  adoption  curve  of technologies across  the  board 
+
+    *    the system  architecture and  ecosystems of the  cloud computing; 
+
+    *    the stages of each  of the  layers and  players in  the transition  process; 
+
+     e   the  roles of each  player during the transition,  and  their business models; 
+
+     e   the comparison  method  in both technical  and  business areas; 
+
+     e   and the comparison of risks and  unknowns. 
+
+The  transition  is a dynamic  process that changes  over time.  Instead of building one  instance of 
+
+the  framework  that  only fits  today's  market  situation,  we  tried  to  build  one  that  can  be  used 
+
+ over  time  with  updated  information,  as  various  players  move  from  their  current  stage  to the 
+
+ next on the technology adoption  curve. 
+
+ The  proposed framework  also  considers the  specific  marketplace  conditions  and  regulations  in 
+
+ related  to  Healthcare,  as  they  play  a critical  role  in  the  development  of  HIT  systems  and  the 
+
+ adoption  of cloud computing. 
+
+ As   shown  in   Figure  6, the  proposed  framework  consists  of  five  major  categories:  Strategy, 
+
+ Regulations   &   Policies,   Technology,   Implementation,   and        Evaluation.   This   framework     is 
+
+ developed  based  on  organizational  decision  making  process  and  provides  matching  tools  to 
+
+ address decision  maker's concerns. The  framework  can  be  used to  reason  about  and  investigate 
+
+ cloud  adoption decisions. 
+
+                                                     -32- 
+
+----------------------- Page 34-----------------------
+
+                     'Is  it aligned with  overall corporate goals&  strategy? 
+                     eBusiness Case 
+     Strategy                                                                                             J 
+
+                     * How is the legal  landscape in  the field? 
+                      els'there any government stimulating benefit? 
+  Regulation &S *What impact will a change  in administration  have on policies? 
+      Policy 
+
+                      1is  
+                         cloud computing a  suitable technology? 
+                     *What solutions does the marketplace  offer? 
+                     *Who are offering them? 
+
+                     *Where / What /  How  often is data accessed? 
+                     eIs, it secure? 
+                                                      infrastructure  and other applications? 
+                     eintegration with  existing IT  
+                     *Any barriers?  Is there a  mitigation  plan? 
+
+                                 benefits? 
+                     *Financial,  
+                     *Clinical  improvement? 
+                     'User  Satisfaction? 
+
+                                             Figure  6 the  Framework  (Original) 
+
+Although the five categories of the framework  can  be applied  independently or sequentially, we 
+
+recommend         that   the    users    use   the   following      evaluation      process    to   get    a  thorough 
+
+understanding and  better alignment for their project. 
+
+                                                          - 33  - 
+
+----------------------- Page 35-----------------------
+
+          SW 
+
+                                Figure  7 Cloud based  HIT system  adoption  process 
+
+4.1       Strategy 
+
+The  adoption  of cloud  computing  is an  organizational  challenge that should  not be  isolated 
+
+from  other  organizational  goals  and  strategies.  Establishing  clear  organizational  goals  and 
+
+strategies  for the  use  of cloud  computing  is  
+                                                        the first  critical  step  in  cloud  adoption.  More 
+
+than  half organizations  who  has  successfully  adopted  cloud  computing  defined  a five-year 
+
+technology   roadmap   for  their  organization   (CDW             LLC,  2011).    Because   adopting  cloud 
+
+computing   in   enterprise  environment   is  non-trivial,  carrying  out  long-term   planning   is 
+
+necessary  and  can  be  done  only when  the  benefits  of cloud  computing  match  the  goals of 
+
+the organization. 
+
+Cloud  computing  allows  organizations  to  realize  their  strategic  objectives  by  shifting the 
+
+focus  from  dedicating  time  and  resources  on  commodity  services  and  processes  to  their 
+
+                                                   -34- 
+
+----------------------- Page 36-----------------------
+
+ core  value-generating  process,  especially  using  public  cloud  services.  Organizations  will  be 
+
+ able   to  shift  responsibility  and  the   management  of  non-core          IT  capabilities  to  cloud 
+
+ providers. 
+
+ In  
+    healthcare  organizations, the top goals  generally fall  between  the following  lines: 
+
+     *   Improved  healthcare services 
+
+     e   Standardized and  simplified  healthcare information 
+
+     *   "Anywhere  access"  to data,  documents,  and applications 
+
+     e   Consolidated  IT  
+                            infrastructure 
+
+     e   Compliance with  regulations and  policies 
+
+     e   Reduced  IT  
+                       capital requirements  and  operating expenses 
+
+According   to   a  study   by    Deloitte,  the  organizations  that   successfully   adopted   cloud 
+
+computing  did  so  mainly  because of the  clear  business case  and  the quick  realization of the 
+
+ business  goals  (Deloitte,  2011).  The  challenge  that  needs  to  be  addressed  is to  provide 
+
+accurate  information  on  costs  and  risks to ensure  that  decision  makers can  compare  trade- 
+
+offs  and  make   informed  decisions   (Khajeh-Hosseini,  Greenwood,   Smith,   &  Sommerville, 
+
+2010). 
+
+The  business  case for  investing in  cloud  based  HIT can  be  built from  several  perspectives.  It 
+
+must consider  both  monetized  and  non-monetized  aspect. 
+
+    *    From  a  business  perspective,  cloud  computing  offers  the  potential  to  bring  more 
+
+         flexibility  in  business  processes.  The  potential  to  scale  the  cloud  platform  rapidly 
+
+        while  paying only  for the  actual  usage  provides  the  organization  with  the  possibility 
+
+         of rapid and flexible scaling or capacity for critical business  processes. 
+
+    *    From  a financial  perspective,  any  HIT  investment  has  immediate  purchase  costs, 
+
+         adaptation  to the  local  organization,  and  staff training.  Because  profits  = revenue - 
+
+         costs, all  organizations benefit from  becoming more  efficient  and  reducing the  costs 
+
+         per  patient  (PG,   SC,   & EB,  2006).  Cloud  based  HIT  requires  less  upfront  investment 
+
+         by   using  a  utility  billing  model   instead  of  hardware   acquisition.   It  benefits  the 
+
+                                                -35- 
+
+----------------------- Page 37-----------------------
+
+    organization from  a cash  flow  point of view.  The  business  case  for  cloud  based  HIT 
+
+    depends on  the  downstream  financial  benefits exceeding the  initial  investment  plus 
+
+    the  on-going  fees.  An  assessment  on  the  costs  associated  with  the  use  of  cloud 
+
+    computing  should  be  done  in comparison  with  what  is then  the  current  IT cost  to 
+
+    support  accurate  estimation  and  informed  decision  making.  Because  the  cost  and 
+
+    benefits  are   both   long  term,   an   NPV   calculation  should   be   used  for  return  on 
+
+    investment. 
+
+"   From    an   IT  perspective,   cloud  computing   enables     a  transformation     on   how 
+
+    information  technology  is  managed   and   used.   By  using  a  combination  of  cloud 
+
+                                     systems,  organizations  can  achieve  new  levels of agility 
+    computing with traditional  IT  
+
+    and  flexibility  allowing  to  deal  with  the  rapid  changes  that  the  current  economy 
+
+    requires  and  to  better  support  the  business. The  disruptive  effect  cloud  computing 
+
+    has  on  how  business  interact  with  IT, confirms  that the  business  needs  to  ensure 
+
+                                towards  the  business,  have  a good   understanding  of  the 
+    they  clearly  position  IT  
+
+    business  needs  and  above  all,   become  true  business  partners  to  implement  and 
+
+    execute  business strategies. 
+
+*   From  an  employee  perspective,  cloud  computing  and  related  technologies  have  a 
+
+    significant  impact  on  the  way  work  is performed.  Through  the  use  of  public  and 
+
+    hybrid  clouds, data  and  application access  becomes  ubiquitous as  long as  an  internet 
+
+    connection   is available.  This   allows  employees   to  work  from   remote   locations 
+
+    without  much trouble  getting access to their data  and  applications. 
+
+"   From  an  organizational  perspective,  the  adoption  of cloud  computing  in   IT, Sales, 
+
+    and  HR  is apparent  in  healthcare,  but for the  core  business  applications  (e.g.  EHR, 
+
+    etc.),  there  is still  a lot of  room  to  grow.  With  cloud  computing,  responsibilities  of 
+
+    each  department  may  change  or  shift  with  the  proposed  system.  New  groups  may 
+
+    be  added and  old  groups  may  be dissolved.  Operational feasibility should  be  studied 
+
+    to   clarify  responsibilities  and  strategic  dependencies   among   organizations   and 
+
+    departments  with  the  cloud  adoption.   Even   if  the  change  is small,   it  helps  the 
+
+    decision  making. 
+
+                                           -36- 
+
+----------------------- Page 38-----------------------
+
+     4.2       Regulation  & Policy 
+
+      Health  care  is a highly regulated  industry, so  is health  information  technology.  In order  to 
+
+     successfully adopt  cloud  computing, one  must  make sure  the  solution complies  and  provide 
+
+      means  to  comply  with  all   related   regulations,  policies  and   standards.  "What  does  the 
+
+      regulation  and   policy  landscape  look   like?"   becomes   an   imminent   question  for  every 
+
+     healthcare  entity.  Without  clear  understanding  of  the  landscape,  one   may  end  up  with 
+
+     unrealistic  estimation  on  the  complexity  of  the  solution.  With  full  understanding  of the 
+
+     regulation  and  policy  landscape,  it  set  a good  starting  point  for  selecting  the  right  set  of 
+
+     cloud candidates. 
+
+     Government   stimulation   plans           also   play  very     important   roles   in     promoting   modern 
+
+     computing  system  adoptions  in  health  care.  Many  organizations  are   passive  rather  than 
+
+     proactive  in terms  of taking  on  new  rules  and  adapting  to  new  requirements.  But  when 
+
+     there  is a stimulation  plan  enacted  most  organizations change  their  behaviors. A clear and 
+
+     correct  interpretation  of  these  plans  are  sometimes  difficult  to  achieve,  but  is critical  to 
+
+     have. 
+
+     Furthermore,  regulations  and  policies develop  and  evolve  over time,  especially when  there 
+
+     is a change in  administration  of the government.  It also  makes  sense to take  a moment  and 
+
+     think about what  impact it might have on your cloud  adoption  plan. 
+
+     In  section   2.2  we     reviewed   the  history  of  the  development   of  HIT   and   the   related 
+
+     regulations.  The  recent  enactment  of  laws  and   regulations  is  reshaping  the  healthcare 
+
+     system.   HHS   has  the  authority  to  promulgate  regulations  and  guidance  to  support  the 
+
+     development   of  a  nationwide  HIT   infrastructure.  The   HHS  website  has  a  list  of  current 
+
+     regulations  and   guidance6 . The   Centers  for   Medicare   &  Medicaid  Services   (CMS)                    also 
+
+6   HHS website: 
+http://healthit.hhs.gov/portal/server.pt/community/healthit       hhs  gov   regulations  and  guidance/1496, 
+Retrieved  on Jan  11,  2012. 
+
+                                                          -  37  - 
+
+----------------------- Page 39-----------------------
+
+                                                                                                 7 
+    provides  a  comprehensive  list  of  regulations,  guidance  and  standards  . Table  3  shows  a 
+
+    combined  list of these  regulations, guidance and  standards that are  related to  EHRs. 
+
+          Regulations &                                                   Description 
+            Guidance 
+    PCAST  Report on  HIT8         "Realizing   the  Full  Potential  of  Health   Information  Technology  to   Improve 
+
+                                   Healthcare  for  Americans:  The  Path  Forward"   provides  recommendations  for 
+                                   using HIT to facilitate the  real-time exchange  of patient  information. 
+    Standards               and    Issued  by  ONC   that  identifies the  standards  and  certification  criteria  for  the 
+    Certification       Criteria   certification of  EHR  technology, so  eligible  professionals and  hospitals  may  be 
+    for  EHR                       assured  that  the  systems  they  adopt  are  capable  of  performing  the  required 
+                                   functions. 
+    Certification  Programs        A  defined   process   to   ensure   that     EHR   technologies   meet      the  adopted 
+                                   standards,  certification  criteria,  and  other  technical  requirements  to  achieve 
+                                   meaningful  use  of those  records in  systems. 
+     Meaningful  Use  of EHR       Guidelines  to  health  professionals  and   hospitals  on   how  to  adopt  and  use 
+     Final  Rule                   electronic  health  record  technology  in  a  meaningful way  to  help  improve  the 
+                                   quality, safety, and efficiency of patient care. 
+     Medicare               and    Incentive   payments   to   "meaningful        users"   who    use   health   information 
+     Medicaid               EHR    technology to  improve value and efficiency of care delivered  to patients. 
+     Incentive  Programs 
+     CLIA     Program       and    The  proposed  rule  would  modify  the CLIA  of  1988  regulations  and  the  HIPAA 
+     HIPAA     Privacy     Rule:   Privacy  Rule  in order to  give  patients the  right  to  get  a copy  of their  health 
+     Patients'    Access      to   information, including test  results, directly from  a clinical  lab. 
+    Test  Reports 
+     HITECH             Breach     Guidelines  to  specify  encryption  and   destruction  as   the  technologies  and 
+     Notification       Interim    methodologies       that    render     protected      health    information      unusable, 
+     Final  Rule                   unreadable, or  indecipherable to  unauthorized  individuals. 
+     Section               1561    These     recommendations        include    initial  standards     and    protocols    that 
+     Recommendations               encourage  adoption  of modern  electronic  systems  and  processes that  allow  a 
+                                   consumer  to seamlessly  obtain  and  maintain  the full  range  of available  health 
+                                   coverage and  other human  services  benefits. 
+     Freedom                  of   The  FOIA  provides  a crucial  mechanism  for  making  government  more  open  by 
+     Information Act               allowing  the  public  to  request  information  which  the  government   is then 
+                                   statutorily obligated  to provide. 
+     Paperwork       Reduction     The   PRA  significantly  changes  many  aspects  of  Information  Collection  by  the 
+     Act  of 1995                  Federal  government,  which  requires  agencies to  plan for  the  development  of 
+                                   new collections of information and the  extension  of ongoing collections well  in 
+                                   advance of sending  proposals. 
+     Economic  Recovery Act        The   ARRA     includes   measures     to   modernize   our     nation's   infrastructure, 
+     of 2009  (ARRA)               enhance  energy  independence,  expand  educational  opportunities,  preserve 
+                                   and  improve  affordable  health  care,  provide  tax  relief,  and  protect  those  in 
+
+ CMS  website:  https://www.cms.gov/home/regsguidance.asp.   Retrieved  on Jan  11, 2012. 
+                                                                 the  healthcare community  are  aligned with.  It is not a 
+ The  PCAST  report  is a set of recommendations  that many  in  
+regulation or  law, but is important for the  HIT adoption. 
+
+                                                          -38- 
+
+----------------------- Page 40-----------------------
+
+                              greatest  need.  As  a  part of ARRA,  the  Medicare  and  Medicaid  EHR  Incentive 
+                               Programs  will   provide  incentive   payments  to  eligible   professional,  eligible 
+                               hospitals  and  critical  access  hospitals  as  they  adopt,  implement,  upgrade  or 
+                              demonstrate  meaningful  use of certified  EHR  technology. 
+                                   Table  3 HIT  Regulations, Guidance  and  Standards 
+
+ Regardless  of the  size  of the  organization,  they are  expected  to  run  according  to accepted 
+
+ business  practices  and  in  compliance  with  applicable  laws  in  an   ethical  manner,  and  to 
+
+avoid   costly  litigation.  The   HIPAA   and   HITECH          laws  spell   out  the  minimum         necessary 
+
+standards  of  protection  on  privacy  and  security  and  set  forth  the  expectation  that  the 
+
+organization   continually  evaluate  the  adequacy   and   effectiveness  of  their  information 
+
+ protection  controls.  An  organization  that  fails  to  comply  with  HIPAA  can  face  fines  up  to 
+
+$50,000 per violation. The  breach  notification  requirement  of the  HITECH  Act  explicitly state 
+
+the  legislative  intention to create an  incentive on  all  covered  entities to secure and  protect 
+
+ PHI  or suffer financially. These  impose  big information  security  risks on  healthcare  providers 
+
+and   HIT  vendors.  While  the  healthcare  organizations  and   physicians  can  get   incentive 
+
+ payments for  rapid  HIT  adoption, they also  bear the  burden  of complying with  the  intensive 
+
+ regulatory  requirements,  which   in   some  cases  outweigh  the  monetary   benefits  of  the 
+
+ incentive programs. 
+
+4.3       Technology 
+
+As   discussed  in  previous  sections,  cloud  computing  is   a  new  evolving  technology.  New 
+
+developments,  new solutions, and  new  offerings  are  being added  quickly and  quietly.  Even 
+
+just   in   the  health   care     industry,   more   and      more   vendors   and   developers  join   the 
+
+ marketplace every day. As  an  integral part of the  framework,  the  purpose of the technology 
+
+study  is  to  understand  the  characteristics  of cloud  computing  development  in  healthcare 
+
+and  seek the  suitability of the  candidate solution. 
+
+ For example,  Amazon  recently announced  its  HIPAA compliant cloud  providing services,  and 
+
+claimed  that  "healthcare  businesses  subject to  HIPAA  can  utilize the  secure,  scalable,  low- 
+
+cost,  IT  infrastructure  provided  by Amazon  Web  Services  (AWS)  as  part  of building  HIPAA- 
+
+compliant  applications."  Amazon  does  it  through  data  encryption  and  a  set  of  security 
+
+policies  and   processes  controls.  However,  according  to  many  experts  in  the  field,  the 
+
+                                                     -39- 
+
+----------------------- Page 41-----------------------
+
+    Amazon  AWS  is  not exactly HIPAA  compliant,  e.g.  there  is  no  customer  accessible  AWS  API 
+
+     call  audit  log; there  is  no way  to  restrict the  source  IP address from  which  the AWS  API  key 
+
+     can  be  used;  each  AWS   account   is limited  to  a  single   key,  which   evokes  unauthorized 
+
+     disclosure  of  the  key  and   results  in  total  breakdown  of  security,  etc.  (Lieberman,  2011) 
+
+     (Balding,  2009). 
+
+     In  the  evaluation  of cloud  computing  key technologies  development  stages.  We  will  use  a 
+
+                                                                    these  areas: 
+     factor of I  to 10 to  indicate the  advancement  of  
+
+ Key  Technology          Factor                                        Development 
+  Development 
+Data           Center     7           Large   IT  companies  (e.g.  Amazon,       Microsoft,  etc.)   have  offered   data 
+(Storage             &                storage    and    management        services    that   specifically    designed     for 
+Management)                           healthcare applications. A 7  is used to  indicate the fast development,  but 
+                                      less maturity. 
+Virtualization             10         Virtualization technology  is  generic for  all types  of  cloud  computing.  HIT 
+                                      can  leverage the  well  developed  virtualization  technologies for  other  IT 
+                                      offerings. We  rate  it at  10 since  there  is  no  known  barrier for transferring 
+                                      to cloud computing for  HIT. 
+Safety & Security          5          Safety  and   security  is  still  the  main  concern  for  cloud  based   HIT.  The 
+                                      recently  enacted  laws  and  regulations  have  set  more  requirements  in 
+                                      this   regards,   which     imposed     significant    challenges     on   healthcare 
+                                      providers  and   HIT  vendors.  We  give   it  a  5  as  the  safety  and  security 
+                                      aspect of the  cloud based  HIT offerings is yet to  be demonstrated. 
+                                     1  
+                                Table  4  Key Cloud  Computing Technology  Development  in HIT 
+
+      It is  important to  know  the  advancement  in  these  areas  because  they are  the fundamental 
+
+     enablers  of the  cloud  computing  architecture. Any  break-through  in these  areas  may  cause 
+
+     radical change to cloud computing architecture. 
+
+      In  addition,  we  will  evaluate the  market  maturity  levels  (number  1~5  for  least  mature  to 
+
+     most)  for  cloud  computing  at  different  layers  by  looking at  the  market  adoption  rate  and 
+
+     size. 
+
+     Service           Least               Less  Mature                  Early         Advanced  Mature              Fully 
+     Model            Mature                     (2)                   Mature                     (4)               Mature 
+
+                         (1)                                              (3)                                          (5) 
+ Infrastructure           X 
+ as a Service 
+
+                                                            -40- 
+
+----------------------- Page 42-----------------------
+
+Platform    as   a                                                        X 
+Service                                                              A few PaaS 
+
+                                                                      vendors 
+                                                                     started  to 
+                                                                     offer  PaaS 
+                                                                      services 
+Software   as    a                                                                               X 
+Service                                                                               More and  more  SaaS 
+
+                                                                                       services are  being 
+                                                                                      offer in  both clinical 
+                                                                                       and  administrative 
+                                                                                           HIT  market. 
+IT as a Service                                  X 
+                                    Small  physician  offices 
+                                   and  health centers  have 
+                                     started to  use  ITaaS. 
+                                      Large  hospitals and 
+                                   healthcare organizations 
+                                      have  not very  much 
+                                            engaged. 
+                                         Table  5  
+                                                 Cloud  based  HIT  Market  Maturity 
+
+    Through  the  matrix  of these  factors  we  hope  to  provide  a clear  and  accurate  depiction  of 
+
+    the  cloud  computing  technology  development  under  the  current  market  conditions.  The 
+
+     layers  represent  the  spectrum  of  cloud  computing  architecture  from  the  lowest  to  the 
+
+     highest.  As  we  exploding  the  architecture  into  more  details,  the  number  of  layers  may 
+
+    increase accordingly. 
+
+    Each  industry  has  a market  maturity  map  different from  other  industries. The  causes of the 
+
+    differences  might  be the  different  roles  IT  
+                                                            plays,  different  regulations  and  policies  imposed 
+
+    on  them,  or  the  different  stickiness  of  the  conventional  computing  habits.  Government 
+
+    stimulus  bill  (like  ARRA)      may  also  have  an  effective  impact  on  the  speed  of  the  market 
+
+    adoption  rate. 
+
+    After  study  and   comparison  of  technologies  available  on  the  market,  using  the  factor 
+
+    matrix, we  can  make  a confident  selection on  the  most  suitable technology that  meets  the 
+
+    organization's  needs. 
+
+                                                          -41- 
+
+----------------------- Page 43-----------------------
+
+4.4      Implementation 
+
+After the  strategic alignment, the  study of regulations  and  policies, and the selection  of the 
+
+                                                                                                     always 
+technology, we  can then  proceed to the next step  and focus  on  implementation.  It is  
+
+a good  idea to  think of the  flow  of  information  and  come  up  with  an  implementation  plan 
+
+that  met the organizational  needs. 
+
+For  any  cloud computing  adoption  project, the first challenge  is to seamlessly  integrate  the 
+
+cloud  deployment  with  the  organization's  existing  IT infrastructure.  One  of the  important 
+
+roles  of  IT is  ensuring  proper  data   integration   between   applications  and   systems  and 
+
+preventing  incompatible solutions to  be  acquired  and  implemented.  When  an  organization 
+
+fails to  implement  proper data  integration  between  clouds and  other  legacy solutions, there 
+
+is the  risk of creating  "departmental  data  silos". Transferring  data from  one  cloud service to 
+
+ another is not an  easy process and  it  leads to sharing deficiencies. 
+
+                                             department  needs to  play  during the  implementation. 
+We  should  consider what  role the  IT  
+
+As  it  becomes  ever  easier  to  implement  applications  using  cloud  computing,  IT might  be 
+
+ excluded   from     implementing      IT  solutions  in   the   organization   (Chorafas,     2010).   It  is 
+
+                                                                    resource.  Especially Software-as-a- 
+ especially valid  in  organizations where  there  is limited  IT  
+
+ Service  solutions allow for  easy and straightforward  implementation,  as  in  most  cases these 
+
+ solutions  need   no  specific   IT assistance  with   regards  to  installation,  configuration  and 
+
+                                                                                       in  the first  place to 
+ deployment.  On  the  other  side,  when  IT is involved, this  involvement  is  
+
+ ensure  the  chosen  cloud  solution  gets  properly  integrated  with  other  applications  and 
+
+                       provides  proper application support. 
+ systems or that  IT  
+
+ We  should  also  consider  what  type  of cloud  to  implement.  Private  clouds  are  popular  in 
+
+ large   enterprises  because  they  give   business  the  most  direct  control  and  the  greatest 
+
+ confidence  in  data  security  and  information  assurance.  Public  clouds  are  easy  to get  on  or 
+
+ off. Sometimes,  hybrid  might the  best solution. As  organizations become  more  comfortable 
+
+ with  cloud  computing,  they will  increasingly  seek to  capitalize on  the  different  advantages 
+
+ of each  cloud type and  related  architectural  models. 
+
+                                                  - 42- 
+
+----------------------- Page 44-----------------------
+
+         Decisions                                                        Questions 
+
+Type  of Cloud                       -    Which  one  best suits your needs?  Public,  Private, or Hybrid? 
+
+Data                                 -    Where  is the data  collected and  stored? 
+                                     -    What  is the data format? 
+                                     -    Who  owns  the  data? 
+                                     -    What  level of  privacy and  confidentiality is  needed? 
+
+Communications                       -    What  does the  data flow  look like? 
+                                     -    How much  bandwidth  is needed from  the cloud? 
+                                     -    How much  computing power do you  need? 
+                                     -    What  is your usage  pattern? 
+                                     -    What  level  of availability and  accessibility is  needed? 
+Application                          -    What  functions and  features  do you  require? 
+                                     -    Does the cloud vendor  provide  off-the-shelf solution? 
+                                     -    Do  you  need customization? 
+                                     -    How  much  additional development  is  needed? 
+
+Security                             -    What  are your security  requirements? 
+                                     -    Does the  cloud  provider meet your  requirements? 
+
+Regulatory                           -    Does the  cloud  comply with  required  regulations? 
+Requirement 
+
+                                          Table  6 Implementation  checklist (Original) 
+
+     Last  but  not  least, we  should  identify  roadblocks and  develop  a mitigation  plan  to ensure  a 
+
+     smooth  implementation.  For  many  hospitals with  large  legacy  systems,  from  mainframes to 
+
+     databases  and   local   network,  they  usually  have  very   large   programming   libraries  with 
+
+     extensions and  patches, that were  typically written ten,  twenty, or  more years  ago.  Many of 
+
+     these  programs  are  mission  critical  and  cannot  be  easily  adjusted  to  provide  interfaces to 
+
+     cloud  applications.  But  in  many cases,  the  new  cloud  base  solution  has  to  replace  or work 
+
+     together  with  the  old   legacy  systems.  In  this  situation,  a system  re-engineering  effort  is 
+
+     needed, which  includes data  mapping,  process  mapping, and  workflow  re-design,  and  so  on, 
+
+     in  order  to  provide  a fully functional  cloud  solution. As  you  can  see,  this  is  not  a short  easy 
+
+     task.  The  project  leader has to  acquire  adequate  resources,  time  and  budget to  accomplish 
+
+     it. 
+
+     4.5       Evaluate the "Success Factor" 
+
+     Establishing clear and  measurable success criteria  is the  first step. This will generate  support 
+
+     from  end  customers  and  decision  makers  within  the  enterprise.  Success  criteria  should  be 
+
+                                                             -  43  - 
+
+----------------------- Page 45-----------------------
+
+                           metrics. Although  IT metrics  are  important, functional  key performance 
+    broader than just  IT  
+
+    indicators,  executing  and  supporting  organizational  goals  (e.g.  average  length  of  patient 
+
+    visit, customer  satisfaction  rate) will elevate the  benefits of the adoption. 
+
+    Using  measurable  and  quantifiable  dimensions  of  parameters  can   make  meaningful  and 
+
+    reliable comparison  among  projects, or different  solutions for the  projects. The  quantifiable 
+
+    parameters for  hospitals and  physicians can  be  developed  from  the following  areas:  Quality, 
+
+    Process    Improvement,      Financial,  and   Customer    Satisfaction,   to  show    the   business 
+
+    performance  comparison  before  and  after the  project  implementation.  Many  organizations 
+
+    have  defined their own  key  performance  indicators  (KPIs)  to  measure the  business health of 
+
+    the   organization   and   ensure   that   all   employees   at  all  levels   are  in  sync   with   the 
+
+    organizational  goals  and  strategies.  These  KPIs  should  be  considered  as  a source  for  the 
+
+    success  factors  to  measure  the  project  output  as  well. As  discussed  at the  beginning  of the 
+
+    framework,   the   key  for  a  successful   cloud   computing   adoption      is  to  align  with   the 
+
+    organization's goal  and  overall  strategy. The  definition of the  success factors  needs to  show 
+
+    that  in a quantified way. 
+
+5.  EHR  - A  Case  Study 
+
+After  the  ARRA   simulation  plan,   many  IT vendors  started  to  develop,  test,  and   implement 
+
+systems  that  provide  meaningful  use  of  EHRs.  Cloud  computing  is also  one  of the  solutions.  A 
+
+case  study  on  cloud  computing  for  EHR  is  used  to  evaluate the  framework  and  show  that the 
+
+readiness of cloud adoption  in  EHR  systems. 
+
+                                                                                                 essence, 
+To  set the stage,  we  will  use  PTSO  of Washington  (PTSO)  as the subject of the  study.  In  
+
+PTSO    is  a   Health  Center   Controlled    Network    (HCCN)    providing   centralized    healthcare 
+
+information  systems  to  multiple  Community  Health  Centers  (CHCs).   PTSO   provisions  software 
+
+development, application  management, technological  infrastructure,  project management,  and 
+
+ongoing support services for  clinical care  delivery and  patient  management  systems.  They  have 
+
+centralized  database  storage  that  hosts  the  data  warehouse  for  all  healthcare  centers  under 
+
+their membership. They also  provide some  data center  management  services such  as disk racks, 
+
+                                                   -44- 
+
+----------------------- Page 46-----------------------
+
+ real-time   replica  systems,  disaster  recovery  systems,  etc.   PTSO   is incorporated   in  2004   in 
+
+ Seattle,  WA  and  has  eight  (8)  CHC                       members  and  over  55   clinic  sites.  In 2011,  there  were 
+
+ approximately  335  providers,  140,000  patients  using  PTSO   network  which   had  over  550,000 
+
+ annual encounters. 
+
+ The  previous  President  of  the  United  States,  G.W.  Bush,  set  the  goal  for  most  Americans  to 
+
+ have  EHR  by 2014  (White  House  Executive Order,  2004).  According to the  National Ambulatory 
+
+ Medical  Care  Survey  (NAMCS)  done  by the  National  Center for  Health  Statistics (NCHS)   in  2011 
+
+ on    patient  visits  to  office-based   physicians  that  collects   information  on                                          use  of  EHR/EMR 
+
+ systems  has  shown that the adoption  of EMR/EHR  systems  has  increased  (Figure  8). 
+
+                          60   -                                                                                            56.9 
+
+                                                                                                          48.3     50.7, 
+                       A50  
+                       .2                                                                       42.0 
+                          40   -                                                       34.8                                 33.8 
+
+                          30        Any  EMR/EHR  system             239      29.2                                249 
+                                 18.2     17.3     17.3                                                                    Basic 
+                                                                              110.5     11.8sse 
+                       a.  10 
+
+                            0  r                     I        I                          a                                    1 
+                                2001      2002     2003     2004     2005     2006     2007     2008     2009     2010      2011 
+
+                     NOTES:  EMR/EHR  is electronic medical  record/eletronic  health record.  "Any EMR  EHR  
+                                                                                                   system'  is a medical or health record 
+                     system that  is all or partialy electronic (excludhg systems solely for  biling). Data for 2001-2007  are  from the  In-person National 
+                    Ambulatory  Medical  Care Survey  (NAMCS). Data for 2008-2009 are from  combined  fles  (in-person  NAMCS and  mail survey), 
+                     Data for  2010-2011  are  prelminary estimates (dashed  lines)  based on the mail survey only. Estimates through 2009  Include 
+                     additional physicians  sampled from  communty heath centers.  Estimates  of basic systems prior to 2006 could not be  computed 
+                    because some  Rams were  not  collected in the survey.  Data Include  nonfederal. office-based  physicians and exclude radiologists, 
+                    anesthesiologists,  and pathologists. 
+                    SOURCE:  CDCINCHS,  National Ambulatory  Medical Care  Survey. 
+
+ Figure  8 Percentage of office-based  physician with  EMR/EHR  systems:  United States, 2001-2009,  and preliminary 2010-2011 
+
+The  number suggested  that the pace  of adoption  of EHR  is quickening. If PTSO  is going to adapt 
+
+to a new  EHR  system,  how  should  they  start  their  evaluation?  Is cloud  computing  a suitable 
+
+technology?  If so,  how  and  what  does  it  cost  to  implement  a successful  solution?  Using the 
+
+framework developed above, we  hope to  help PTSO  to  make  a clear and confident decision. 
+
+                                                                          -45- 
+
+----------------------- Page 47-----------------------
+
+ When  PTSO  considers the adoption  of a  
+                                               new EHR system,  the first step  is to evaluate the  overall 
+
+ alignment  of strategy  and  corporate  goals  (as  shown  in  Figure  7).  As  stated on  PTSO's website, 
+
+ PTSO's  vision  is to  become  "the  technology  services  partner  of choice to  enhance  community 
+
+ health  center  business  processes  and  improve  community  health."  The  mission of PTSO  is:  "To 
+
+ work   in  partnership  with   CHCs     to   improve   patient  care   through   shared,    cost   effective 
+
+technology and  services."9 Adopting  cost  effective technology to  improve  patient care  is one  of 
+
+ PTSO's  organizational  strategies.  Cloud  based  EHR  as  one  of the  fast  developing  technologies 
+
+ has  received  much  attention from the  IT and  HIT industries. So  the  question to  be answered  is, 
+
+ "does  the adoption  of a cloud  based  EHR  system  align with  PTSO's  goals  and strategy? 
+
+A  systematic  review on  the  impact  of HIT on  quality,  efficiency, and  costs  of medical  care  (Wu, 
+
+ et  al.,  2006)  concluded that the  benchmark  institutions have  demonstrated  the efficacy of  HIT 
+
+ in   improving  quality  and  efficiency.  An   updated  review  as  a continuum  of  the  above  study 
+
+ (Goldzweig, Towfigh,  Maglione,  & Shekelle,  2009)  confirmed  the  previous conclusion,  and  also 
+
+ indicated   the   paucity   of   quantitative   cost-benefit   data    and   calculation   of   actual   HIT 
+
+ implementation. 
+
+Southern   California   Evidence-based   Practice   Center  (EPC)     has   provided  an   evidence-based 
+
+ practice   report  on   the   costs  and  benefits  of  HIT   systems,  along  with   an   accompanying 
+
+interactive database that catalogs and  assesses the  existing evidence  (PG,  SC,   & EB,  2006).  This 
+
+report  systematically  reviews  the  literature  on  the  implementation  of  HIT  systems  in  all  care 
+
+settings  and  assesses  the  evidence  in  specific circumstances,  such  as  the  costs  and  benefits of 
+
+HIT  for  pediatric  care,  the  costs  and  cost-effectiveness of  implementing  EHR,  and  so  on.  The 
+
+result  of this study showed  that, EHRs  were  associated  with improvements  in service and other 
+
+9  PTSO  homepage:  http://www.ptsowa.org/about-us.html.  Retrieved on  December 27,  2011. 
+
+                                                    -46- 
+
+----------------------- Page 48-----------------------
+
+resource    utilization,  provider  productivity,   care     efficiency,  documentation      quality,  clinical 
+
+decision-making, guideline compliance, and costs of care. 
+
+Apparently,  the  studies  confirm  that,  in  general,   implementing  an         EHR  system   aligns  with 
+
+PTSO's  organizational  goal  of improving  patient care.  However, the  literature  also  indicated that 
+
+building  a  business  case  using  quantitative  cost-benefit  models  is  still  in  early  development 
+
+stages. There  is  a lack of meaningful  data to calculate and  show  numerical financial benefits and 
+
+gains. 
+
+In  this  case  we  will  discuss  the  business  case  of cost-benefit  of  adopting  a cloud  based  EHR 
+
+system at  PTSO  in qualitative senses: 
+
+    e    From  a  business  perspective:  as  a  membership  organization,  one  of  PTSO's  tasks  is  to 
+
+         help  its  members to  be  more  efficient  and  effective at their  business  processes through 
+
+        training,  education,  and  new technology adoption.  Information  and  knowledge  sharing 
+
+         on  business  processes  across  members  of  PTSO  can  be  achieved  by  using  cloud  based 
+
+         EHR  systems.  When  there are  other  HCCN  or similar  organizations using the same  cloud, 
+
+        sharing data  or function across  multiple organizations  is  also  possible. Cloud  based  EHRs 
+
+        are  generally  developed  to  scale  and  to  serve  a greater  base  of clients,  therefore  they 
+
+        provide  a  powerful  platform  for  the  clients  to  share  best  practices  on  their  business 
+
+        processes. 
+
+    *   From  a  financial  perspective,  implementation  of  an   EHR   system   requires  substantial 
+
+        capital  investments,  especially  at  the  beginning  of the  learning  curve  for  training  and 
+
+        loss   of   productivity.   However  comparing   to   conventional         EHRs,   the   cloud   based 
+
+        solutions  not only  improve workflow  and  reduce paperwork,  but also  reduce the cost  of 
+
+        infrastructure and space  usage,  as well as  the need  of hiring more employees to  manage 
+
+        and   maintain  on-premise   systems        (Kundra,   2010).   Software   upgrades  and   ongoing 
+
+        support  can  be  outsourced  to  the  cloud  vendors.  All  of these  provide  necessary  cost 
+
+        savings  for PTSO  to stay flexible  and  cost competitive  in  financial  needs. 
+
+    "   From  an   IT  perspective,  migrating  to  cloud-based  EHRs  will  free  up  the  IT  resources 
+
+        devoted   to   functions  such      as  network   administration,   system       maintenance,   and 
+
+                                                     -47- 
+
+----------------------- Page 49-----------------------
+
+        hardware  support,  etc.  Those  resources  can  be  released  or  reallocated  to  user-facing 
+
+        support or  business analysis to  improve  business operations.  For example, they can  stay 
+
+        focused  on  EHR   usages,  such  as  who  are  using  EHR  services,  which  departments  are 
+
+                                                                                           group  will  get  a 
+        most  frequently  users,  and  other  usage  patterns.  By  doing  so,  the  IT  
+
+        better understanding of the  business, and  improve  its services  accordingly as  an  integral 
+
+        part  of  the  business,  and  then  ultimately  becomes  a  stronger  force   in  driving  the 
+
+        business  using  appropriate  information  technology  (Thompson,  Osberoff,  Classen,   & 
+
+        Sitting, 2009). 
+
+    *   From  an  employee  perspective, an  easy-to-use  cloud  based  EHR  system  not only makes 
+
+        their jobs  easier,  but  also   makes  their  skills  transferable  when  they  move  from  one 
+
+        organization  to  another.  As   discussed  in  section  2.1,  cloud  computing  becomes  more 
+
+        and   more   popular  in   most   industries  or  areas.  The   skills  developed   in   cloud   EHR 
+
+        adoption  by  PTSO  employees  are  applicable  to  other  types  of  cloud  adoptions.  Either 
+
+        another  type  of cloud,  or  the  same  cloud  in  another  organization,  directly  or  indirectly 
+
+        adopting  a cloud  based  EHR  improves the  competencies  and  competitiveness  of  PTSO's 
+
+                            job  market. 
+        employees in  the  
+
+    "   From  an  organizational  perspective, implementation  of an  EHR  system  typically requires 
+
+        significant  organizational  change,  as  new  procedures  and  business  practices  have to  be 
+
+        adopted  in  order to  meet the  EHR  collecting  and  storing  rules  and  regulations. A cloud 
+
+         based  EHR  system  unifies these  procedures  and  business  practices  among  members  of 
+
+         PTSO,   at  the  same  time  also  connects  PTSO   with  others  who   use  the  same   cloud. 
+
+        Although  the  same  organizational  change  is required  for  both  cloud  based   EHR  and 
+
+         conventional      EHR,   a   cloud-based      solution    provides     more    opportunities      for 
+
+         benchmarking with similar organizations. 
+
+In summary,  EHR  systems  are  essential for  improving efficiency  and  quality of health care,  and 
+
+cloud  computing  makes  it  easier  and  less  expensive,  both  of which  align  with  PTSO's  overall 
+
+goals  and  strategies.  A qualitative  analysis on  the  business  case  of adopting  a cloud  base  EHR 
+
+also  shows  multiple  benefits in  all  perspectives. Thus,  we  conclude the  adoption of cloud  based 
+
+EHR  is strategically sound  and  beneficial to PTSO  in  the  long run. 
+
+                                                    -48- 
+
+----------------------- Page 50-----------------------
+
+                              *How is the legal  landscape  in the field? 
+                              eis there  any government  stimulating benefit? 
+             Regulation  &    *What  impact will a  
+                                                      change  in administration  have on policies?                  - 
+
+             I  Policy  
+
+ Next, we  need to  look at the regulations and  policies. 
+
+ HIT  is  heavily regulated  due  to the  sensitivity and  privacy  rules  of health  information.  EHR  as  a 
+
+ major component of HIT  not only  has to obey the  laws  enacted to overall  HIT  systems,  but also 
+
+ has to follow the specific regulations and  standards  regarding EHR. 
+
+ From  the Table  3  we  can  see  that  in  order to  be qualified  as  an  acceptable  EHR,  it has to  meet 
+
+ many specific  rules and  requirements. The  legal  landscape is very complicated.  The government 
+
+ stimulation  plan  is  provided,  but  requires substantial work  to demonstrate  "meaningful  use"  of 
+
+ certified  EHR  technology.  Incentive  payments  are  conditioned  on  the  ability  of  providers  to 
+
+ demonstrate   "meaningful   use"   of  EHRs,   defined   by  the  statute  as  (1)  use  of  certified  EHR 
+
+technology  in  a demonstrably  meaningful  manner,  including  e-prescribing;  (2)  use  of certified 
+
+ EHR  technology  that  allows  for  the  electronic  exchange  of  health  information  to  improve  the 
+
+quality  of healthcare,  such  as  promoting  care  coordination;  and  (3)  reporting on  clinical quality 
+
+ measures  and  other  measures  selected  by the  Secretary  using certified  EHR technology  (ARRA, 
+
+2010). 
+
+HITECH      employs  both  "carrots"   and  "sticks"  to  encourage  the  adoption  and  use  of  EHRs.   It 
+
+provides  monetary  incentives to  eligible  healthcare  providers  under  Medicare  and  Medicaid, 
+
+and  also  threatens  financial  penalties  in  the  form   of  reduced   Medicare  payments  for  non- 
+
+adopters.  Table  7  and  Table  8  show  the  details  and  schedule  of the  incentive  payments from 
+
+Medicare  and  Medicaid  (Goldstein, 2010).  Starting from  2011,  physicians and  hospitals who  can 
+
+demonstrate  meaningful  use  of a certified  EHR  system  can  receive  bonus  Medicare  payments 
+
+for  up to  five years.   Starting  in  2015,  physicians  and  hospitals that are  not  meaningfully  using 
+
+EHRs will be  penalized in the form  of reduced Medicare fees. 
+
+                                                            -49- 
+
+----------------------- Page 51-----------------------
+
+  Adoption             First Payment Year Amount  and Subsequent                        Reduction  in Fee  Schedule  for 
+     Year                Payment Amounts  in Following  Years  (in                            Nonadoption/Nonuse 
+                                      thousands  of dollars) 
+2011                $18,  $12,  $8,  $4,  $2                                           $0 
+  2012              $18,  $12,  $8, $4, $2                                             $0 
+  2013              $15,  $12,  $8, $4                                                 $0 
+  2014              $12,  $8, $4                                                       $0 
+  2015              $0                                                                -1%   of Medicare  fee  schedule 
+  2016              $0                                                                -2%    of Medicare  fee  schedule 
+                                                                                                Medicare  fee  schedule 
+  2017       and    $0                                                                -3%    of  
+following         I 
+ Table  7 Medicare  incentive Payments  for Meaningful  Use  of Certified  EHRs  by  Eligible Professionals (in thousands of dollars) 
+
+ HITECH  also  gives  an  explicit  boost to state  funding  efforts for  HIT  under  Medicaid  by  providing 
+
+a  100% federal  contribution  to  enable  EHR  adoption  by  Medicaid  providers who  serve  a  high 
+
+volume  of  Medicaid   patients.  In   order  to  qualify  for  the  Medicaid   incentive   payment,  a 
+
+ provider's  patient load  must  be at  least 30% Medicaid. While  the  HHS  is  obligated to  implement 
+
+ HITECH's  Medicare  HIT incentives, Medicaid implementation  is an  optional state  undertaking. 
+
+                                                        Payment Year 
+Adoptio       2011       2012     2013      2014      2015      2016      2017     2018     2019     2020     2021     Total 
+n Year                                                                           I                                     Payment 
+  2011        21.25      8.5       8.5      8.5       8.5       8.5       0        0        0        0        0        63.75 
+ 2012                    21.25     8.5      8.5       8.5       8.5       8.5      0        0        0        0        63.75 
+  2013                            21.25     8.5       8.5       8.5       8.5      8.5      0        0        0        63.75 
+ 2014                                       21.25     8.5       8.5       8.5      8.5      8.5      0        0        63.75 
+  2015                                                21.25     8.5       8.5      8.5      8.5      8.5      0        63.75 
+ 2016         _         _      _       _       _          _21.25          8.5      8.5      8.5      8.5      8.5      63.75 
+ Table  8  Medicaid  Incentive  Payments  for  Meaningful  Use  of Certified EHRs  by Eligible Professionals (in thousands of dollars) 
+
+ In   addition  to  the  incentive  programs,   HITECH             also  significantly  revised  the  HIPAA  law  and 
+
+ established  the  national  data  security  breach  notification  law  for the  first  time  by  requiring 
+
+ covered  entities  to  notify individuals whose  unsecured  PHI  has  been  disclosed  as  a  result of a 
+
+ privacy  or  security  breach.  This   law  is   not   limited  to  breaches  of  the  security  of  online 
+
+ information  or  restricted to  financially sensitive  information,  such  as  Social  Security  numbers. 
+
+ The  statue applies similar  breach  notification  requirements to vendors of PHRs  (Personal  Health 
+
+ Records),  businesses  that  offer  products or services through  the Web  site of a PHR  vendor  or  a 
+
+                                                              -50- 
+
+----------------------- Page 52-----------------------
+
+covered  entity that offers  PHRs  and  entities that access  information  in or send  information  to a 
+
+ PHR  (ARRA,  2010). 
+
+ARRA's   HITECH     provisions  reflect  a shared  conviction  among  the  presidential  administration, 
+
+Congress,  and   many  healthcare  experts  that  electronic  information  exchange  is essential  to 
+
+improving   health  and      healthcare.   However,   HIT   as     a  means   of  improving  the   quality  of 
+
+healthcare  and  the  efficiency  of  healthcare  systems,  still  faces  a  number  of  implementation 
+
+challenges.     First  of  all,  to   support   the   new   set   of  complex      statutory   and    regulatory 
+
+requirements  for  the  incentive  programs,  technical  and  financial  assistance  for  providers  and 
+
+federal  and  state  agencies  are  required.  Furthermore,  these  requirements will  require  changes 
+
+in  workflow   processes  and   systems  that  will  take  resources   and  time   to  implement  and 
+
+upgrade. 
+
+When  there  is an  administration  change  (e.g.  2012  selection),  there  generally  will  be  some 
+
+directional  change  in  the  regulatory  rules.  It  usually takes  a great  amount  of time  for this type 
+
+of directional  change to  become  fully  understood  and  enforced.  Since  most  of these  rules  are 
+
+long term  (count in  years),  while  the  decision for  an  EHR  adoption  project  is short term  (count 
+
+in   months),  the  direct  impact  of  administration  change  on  a specific  project  would   not  be 
+
+dramatic.  Nonetheless, the  implementation  of EHR  adoption  projects may take years,  including 
+
+customization,  workflow   redesign,   and   sometimes   changing  vendors   several   times.                 The 
+
+organization     should    monitor   the   situation   and     adjust   long-term     organization    strategies 
+
+accordingly. 
+
+We  have  discussed  the  effect  of government  stimulation  on  the  technology  adoption  curve  in 
+
+section  3.3.   During  the  technology  evaluation   and   implementation,   all  of  these  rules  and 
+
+requirements  have to  be  carefully  considered  and  evaluated.  They  should  be  treated  as  a part 
+
+of the  requirement  analysis before the  design and  development  starts. 
+
+                                                      - 51- 
+
+----------------------- Page 53-----------------------
+
+Organizations  need  to  be  savvy  on  technology  selection.  There  are  a lot  of potential  systems 
+
+offered  by  various  vendors.  A   recent  search   on   ONC-ATCB                certified   EHRs    returned   1132 
+
+ambulatory  and  549  Impatient  EHR  products. 
+
+Generally  all  EHRs  fall  into three  categories:  1) Client/Server  model,  2) ASP  based  web  model, 
+
+and  3) Cloud  Computing  based. Table 9 shows  pros and  cons of each  of these  categories. 
+
+ EHR  Model                          Pros                                                Cons 
+Client/Server      More control                                Requires special SW  installation;  more  investment 
+                                                                  computer  hardware  and technical  support; 
+                                                               in  
+ASP  based         Browser  ready; Medium                      Medium  investment  in HW and  SW; 
+                  accessibility; 
+                                                                                      HW and SW; 
+Cloud  based       Browser  ready; Superior                    Least investment  in  
+                  accessibility; Scalability; 
+                  Collaboration; 
+                                           Table  9  EHR  Technology Comparison 
+
+ For  PTSO,  a cloud  based  EHR  is a suitable technology because of the following  reasons: 
+
+     *    There  are  a number  of cloud  based  ONC-ATCB  certified  EHR  solutions  available,  which 
+
+          indicates  that  cloud  computing  technology  has  passed  the  initial hurdle  of developing 
+
+          commercial  EHR clouds that are  HIPAA and  "Meaningful-use"  compliant. 
+
+     *     PTSO  as  an  HCCN  organization  puts  a lot value  on  scalability of the  system.  Both  scale 
+
+          up  and  scale  down  are  needed  as  new  member joins  PTSO  or  existing  member  leaves 
+
+          PTSO.   A  cloud   based   EHR   offers  PTSO   the  maximum  flexibility  with   minimum  cost 
+
+          among the three  models.  For example, they  can add  or  remove  storage  with Amazon  or 
+
+          Google cloud  at  any  time  and  only  pay for the  usage  incurred.  But  with  a conventional 
+
+          implementation,   they   have  to   buy  extra           storage   space   upfront,   and       it  is  nearly 
+
+          impossible to get  rid of excess storage without financial  penalty. 
+
+                                                         -52- 
+
+----------------------- Page 54-----------------------
+
+     *    PTSO  covers  a large  base  of locations  (55  clinic sites).  A cloud  based  EHR  provides  the 
+
+          best  accessibility  and  collaboration  as  users  are  able  to  securely  log  in  to  the  system 
+
+          from  anywhere  at  any time  as  long as  they  have an  internet  connection. To  be  certified 
+
+          by  ONC-ATCB,   the  cloud   based   EHRs   need  to  demonstrate   adequate  assurance  on 
+
+          privacy and  security in a  
+                                         widely  open  environment  (the Internet) to  meet the  HIPAA and 
+
+          HITECH    Privacy  Rules.  This  locational  transparency  where  data  can  be  requested  and 
+
+          produced  without   regard  to  data   location  and  without  worrying  about  privacy  and 
+
+          access  control  is very  important  to  PTSO.           The   increasing  trend  of  cloud  computing 
+
+          adoption  in  other  industries  has  been  clearly  evidenced  in  many  surveys  and  studies 
+
+          (CDW  LLC,  2011)  (Deloitte,  2011).  Even  though  health  care  industry  has  lagged  behind, 
+
+         the  same  trend  is also  shown  in  the  referenced  surveys.  Adopting  a cloud  based  EHR 
+
+          solution  fits  into  the  overall   industry  trend  and  will  prepare   PTSO   well   for  future 
+
+          development. 
+
+     "   Among  the   1132   ONC-ATCB            certified  ambulatory  and   549   impatient  EHR   systems, 
+
+          approximately  10%  of them  are  cloud-based  solutions.  PTSO   has  the  opportunity  to 
+
+          choose from  an  abundant  resource  and find the solution  meets  PTSO's  requirements. 
+
+     *   While  safety  and  security  of clouds  still  remain  as  a primary  concern  for  many  health 
+
+          care  professionals, we  should  trust that the  ONC-ATCB  certified  cloud  based  EHRs  meet 
+
+         the  security  and  privacy  rules  set  forth  by  HIPAA  and  HITECH.   The  Computer  Security 
+
+          Division  of  NIST     has   provided   "guidelines  on   security  and          privacy  in   public  cloud 
+
+         computing"  (NIST,  2011)  . Following the guidelines  carefully will  further  eliminate those 
+
+         concerns that PTSO  may  have. 
+
+Table   10  shows  a  partial   list  of  ONC-ATCB          certified  cloud   based   EHR       solutions'0  and  the 
+
+companies  who  offer  them.  Since  PTSO             is a central  network  providing  IT solutions  to  all  its 
+
+members,  it  has  better  information  technology  resources  and  expertise  than  a general  health 
+
+center.  PTSO      also   has  the  capability  of  developing  its  own          IT applications  and   solutions. 
+
+Therefore,  PaaS  seems  to  be  a better choice  as  it  provides  customer  application  development 
+
+capability.  However,  in  the  EHR  case,  as  we  can  see  from  the  following  table,  most  of these 
+
+10  
+  http://www.cchit.org/products/onc-atcb;  Retrieved on  Jan  30, 2012. 
+
+                                                          -  53  - 
+
+----------------------- Page 55-----------------------
+
+solutions  are  offered  as  SaaS  model,  with  only one  PaaS  model.  It  leads us  to  believe that  PaaS 
+
+for  EHR  is still  in very  early stage of development.  Even though  PTSO  is pioneer in  adopting  new 
+
+ IT technologies,   it  also   has   responsibility  in   ensuring  the  reliability  and   robustness  of  its 
+
+solutions.   Using  the  factor   matrix  developed   in  section  4.3,  we   believe  the  best  suitable 
+
+technology for  PTSO  at this time  is a SaaS  cloud  model,  since  it is so far the  most  mature  model 
+
+in the  HIT cloud  computing  market (Table  5) and  in the  cloud-based  EHR  offerings. 
+
+   Company             Product       Architectur         Cloud                            References 
+      Name              Name            e  Layer        Model 
+Athenahealth         AthenaClin      SaaS             Public          http://www.athenahealth.com/our- 
+                     icals                                            company/about-us.php 
+HePoEx:              Connect         SaaS             Public          http://www.hepoex.com/microsoftcloudpow 
+Microsoft            EHR                              (Microsoft      er.htm 
+                                                      cloud) 
+Unifi                Unifi-Med       SaaS             Public          http://www.emritc.com/Unifi-Med.html 
+Technologies 
+Sevocity             Secure          SaaS             Private         http://www.sevocity.com/secure-cloud-ehr 
+                     Web  EHR 
+CareCloud            CareCloud        PaaS            Public          http://www.carecIoud.comL 
+                                             Table  10 Cloud  Based  EHR  Solutions 
+
+ Please  note,  it will  take  additional  detailed  evaluation  and  vendor  negotiation  on  terms  and 
+
+ price before a final  decision can  be  made  on which  specific  product to select. This  is beyond the 
+
+ scope of this thesis, so we won't  get  into  it here. 
+
+                                                           -  54- 
+
+----------------------- Page 56-----------------------
+
+ Implementing  an  EHR  solution  can  be  a tedious task  for an  organization  that  has  other similar 
+
+systems  or  processes  in  place.  Many  research  organizations  and  consulting  firms  have  done  a 
+
+lot of prep work to ease and  guide the  transition.  For  example,  the  Healthcare  Information  and 
+
+Management           Systems  Society   (HIMSS)          developed   and         published   an      exhaustive   checklist 
+
+focusing  on  the  workflow,  operations,  and  communications  factors  in  an   EHR  implementation 
+
+process. The  full  report  is attached  (Appendix  1) and  can  serve  as  a great  reference  for  anyone 
+
+who  is seeking to transition to  EHR. 
+
+ In order  to  make the  checklist suitable for a cloud  EHR  implementation, we just  need  to further 
+
+advance the  HIMSS  checklist for cloud  adoption  purpose.  The  HIMSS  checklist  is a 40-page  long 
+
+document.  Most  of the  checklist  items  are  applicable  to  any  type  of  EHR   system  adoptions, 
+
+including  clouds.  With  just  a few  more  add-ons  specific  for  a cloud  computing  solution,  the 
+
+checklist will  be ready to go. 
+
+     Decisions                             Questions                                              Answers 
+
+Type of Cloud                -    Which  one  best suits your                      -    In addition to  EHR systems,  PTSO 
+                                  needs?  Public, Private, or                           also  provides other  IT services, 
+                                  Hybrid?                                               such as operations  and  hosting 
+                             -     Integration with existing  IT                        services,  report services, EDI 
+                                  infrastructure and  other                             services, etc.  PTSO's  existing EHR 
+                                  applications?                                         system  is a self-hosted 
+                                                                                        client/server system.  In order to 
+                                                                                        integrate the  new  EHR  cloud  into 
+                                                                                        the existing infrastructure, a 
+                                                                                        hybrid  cloud seems to  be the 
+                                                                                        best option.  Both  public cloud 
+                                                                                        and  private cloud  are  also viable 
+                                                                                        options. 
+Application                  -    Does the cloud vendor  provide                   -   The  cloud vendors  provide off- 
+                                  off-the-shelf solution?                               the-shelf solutions as well  as 
+
+                                                             - 55  - 
+
+----------------------- Page 57-----------------------
+
+                           -    Do you  need  customization?                       customization  capabilities. 
+                           -     How  much additional                          -   The  amount of additional 
+                                development  is needed?                            development  is dependent on 
+                                                                                   the type and  amount  of 
+                                                                                    customization. But  it shall  be  a 
+                                                                                    lot less than developing an EHR 
+                                                                                   from  scratch. 
+Regulatory                  -   Does  the cloud comply with                    -    ONC-ATCB  certified  EHR 
+Requirement                     required  regulations?                              solutions  must comply with 
+                                                                                    required  regulations such as 
+                                                                                    HIPAA and  HITECH. 
+
+Table  11  PTSO  Cloud  EHR  Implementation  Checklist 
+
+While  the  actual   implementation  is           not  a  focus  of  this  thesis,  one  should   know  that  the 
+
+implementation  of  the  selected  system  takes  more  than  just  check  the  checkbox.  A  HITECH 
+
+survey on  EHR  implementation  shows that  collaboration  and  information  gathering from  peers 
+
+is critical to the  implementation  process, and workflow  training and  change  in  management  are 
+
+the  two  greatest  challenges  for  EHR  adoption  (Carol,  2010).   Here  we  attempt  to  provide  a 
+
+guideline  built upon the  lessons  learned  from  other organizations  so  the  same  mistakes can  be 
+
+ avoided for  PTSO. 
+
+                                                           -56- 
+
+----------------------- Page 58-----------------------
+
+As  stated  by  HSRA,  HCCNs  as  business  entities  are  also  formed  to  exchange  information  and 
+
+ establish  collaborative  mechanisms  to  meet  administrative,  IT and  clinical  quality  objectives. 
+
+ PTSO  as  one  of the  HCCNs  must carry  the  same  set  of objectives.  The  adoption  of EHR  cloud 
+
+should  also  support  PTSO   in  achieving  these  objectives.  Therefore,  the  success  factors  of the 
+
+ adoption  shall  include  measureable  performance  parameters  in  various  areas,  such  as  quality 
+
+ improvement,  process  (operation)  improvement,  financial  benefits,  customer  satisfaction,  and 
+
+so on,  to support the organization  objectives. 
+
+As  the final  step  of the framework,  we  should  investigate  what  criteria  to  use  as  indications of 
+
+the  successfulness of the  EHR  cloud  adoption. Table  12 shows the  chosen  parameter for  PTSO 
+
+and the  desired trend  of after the EHR  cloud  adoption. 
+
+             Success  Factors                     Before EHR  Cloud Adoption              After  EHR  Cloud Adoption 
+
+Quality Improvement______________ 
+
+Number of CHC  members                         Base                                     Increase 
+Number of clinical sites                       Base                                     Increase 
+Number of treatment(encounters)                Base                                     Increase 
+Encounter/employee  Ratio                      Base                                     Increase 
+System  Downtime                               Base                                     Decrease 
+Process Improvement 
+EHR  mistake instances                         Base                                     Decrease 
+Average  waiting time                          Base                                     Decrease 
+Financial  Benefits 
+Software Annual  Maintenance  Cost             Base                                     Decrease 
+Hardware Annual  Maintenance  Cost             Base                                     Decrease 
+Customer Satisfaction 
+Customer Overall  Favorability                 Base                                     Increase 
+Number of complaints                           Base                                     Decrease 
+
+                                                  Table  12 Success  Factors 
+
+                                                          -57- 
+
+----------------------- Page 59-----------------------
+
+It  is important  to  establish  the  measurement  method  of these  parameters  at  early  stage  to 
+
+ensure   necessary   processes   and   data  points   are  being   defined   and   collected.   (National 
+
+Committee  for  Quality  Health  Care,   2006),   (The  Society  of  Hospital  Medicine's  Benchmarks 
+
+Committee,  2006),  and  (Shih  & Schoenbaum,   2007),  have  provided  details  and  guidelines  on 
+
+the  metrics  and  quantification  methods  to  measure  the  hospital  performance.  We  will  not 
+
+discuss the data  collection  and  calculation of these parameters  here,  but referring to the above 
+
+documents  is highly recommended  when  implementing the  metrics. 
+
+                                                 -58- 
+
+----------------------- Page 60-----------------------
+
+6.  Conclusions 
+
+Health  care organizations  are  rapidly developing their  HIT systems,  but they are  still at the  start 
+
+of  a transition  period  and  face   many  challenges  with  respect  to  cloud  computing  adoption. 
+
+There  are  currently  no  mature  techniques  or  frameworks  available  to  address  the  identified 
+
+challenges. This thesis is  an  attempt to  provide a framework to support  decision-making  during 
+
+the cloud  adoption for health care organizations. 
+
+The  value  of the  framework  is  demonstrated  using  a case  study  that  focused  on  adoption  of 
+
+cloud  based  EHR  systems  in  an  HCCN   organization.  The  study  showed  that the  framework  is 
+
+effective  in  identifying the outstanding  issues and  providing  guidelines  in  solving these  issues 
+
+specific  to  the  case.      Based   on   the   results  of  the  analysis   using  the  framework,              it  was 
+
+recommended  that  adopting  EHR  cloud  at  PTSO  fits  its overall  strategy  and  is  supported  by the 
+
+business  case;  there  are  multiple choices  of ONC-ATCB  certified  cloud  based  EHRs  meeting the 
+
+regulations   and   standards        set  forth   by   the  government;   cloud         based     EHR    is   a  suitable 
+
+technology  for   PTSO;        and    by  following  the  implementation            recommendations          using  the 
+
+comprehensive  checklist, the  success  of the  adoption  can  be  reflected  in  the  measurements  of 
+
+the  key performance  parameters  of the  HCCN  organization. 
+
+7.  Acknowledgements 
+
+During this  study  I received  tremendous  help  from  my  advisor  David  Hartzband.  Thank  him  for 
+
+his  guidance  and  patience.  I also  thank  Michael  Lardiere,  Doug  Smith,  Roy  La  Croix,  Daniella 
+
+Meeker,  Natasha  Balac,  Dallas  Thornton,  Aziz  Boxwala,   Mike  Gualtieri,  and  Ken  Accardi,  who 
+
+have  generously  offered their time  and  shared with  me  their views  and  real  life experiences  in 
+
+the field. 
+
+                                                          - 59 - 
+
+----------------------- Page 61-----------------------
+
+Bibliography 
+Amazon.com.  (2009, April).  Amazon  Web  Services - Creating  HIPAA-Compliant  Medical  Data 
+Applications with Amazon  Web  Services. 
+
+                                          § 4101(a)  (adding new section  1848(o)(2)(A)  to the Social 
+ARRA.  (2010). ARRA   Title IV Subtitle A  
+         Act),  42  U.S.C.A.  §  1395w-4 (West,  Westlaw  through March  2010). ARRA. 
+Security  
+
+Avanade.  (2011, June).  Global Survey: Has  Cloud Computing  Matured?  Retrieved January  19, 
+2012, from  Avanade: 
+http://www.avanade.com/Documents/Research%20and%201nsights/FY11_CloudExecSumma 
+ry.pdf 
+
+             (2009, April  8).  Is Amazon AWS  Really HIPAA  Compliant  Today? Retrieved September 
+ Balding, C.  
+2, 2011,  from  Cloudsecurity.org:  http://cloudsecurity.org/blog/2009/04/08/is-amazon-aws- 
+really-hipaa-compliant-today.html 
+
+ Bittman, T. (2009).  The Evolution  of the Cloud Computing  Market. 
+
+ Blumenthal,  D. (2009). Stimulating the Adoption  of Health  Information Technology.  The New 
+England Journal of Medicine,  360:  1477-1479. 
+
+ Bower, A.  G. (2005).  The Diffusion and  Value of Healthcare  Information  Technology. Santa 
+ Monica,  CA:  RAND  Corporation. 
+
+ Cafaro,  M.,  & Aloisio,  G. (2011).  Grids,  Clouds and  Virtualization. Springer. 
+
+ Carol.  (2010, June  28).  EHR  implementation survey results.  Retrieved January  20,  2012, from 
+ HITECH  Answer:  http://www.hitechanswers.net/ehr-implementation-survey-results/ 
+
+ Cathy Schoen,  e. a. (2011,  September).  Affordable  Care Act  Reforms  Could  Reduce the  Number 
+                                                                                         11. 
+ of Underinsured  US  Adults  by  70  Percent.  Medical Benefits,  p. Vol.  28  Iss.  19  p.  
+
+                                                                                                   CDW. 
+ CDW  LLC.  (2011).  From  Tactic to Strategy:  The CDW 2011  Cloud Computing  Tracking Poll.  
+
+               (2010).  Cloud Computing Strategies. CRC  Press. 
+ Chorafas,  D.  
+
+ Deloitte.  (2011).  Cloud Adoption  Study  Cloud computing is  gaining momentum.  ClOnet. 
+
+             (2010,  May 20).  CONNECT  & NHIN  Direct:  What Are  They? Retrieved  Novernment 
+ Goedert, J.  
+ 21,  2011,  from  Health  Data  Management: 
+
+                                                   - 60- 
+
+----------------------- Page 62-----------------------
+
+ http://www.healthdatamanagement.com/news/interoperability-connect-nhin-direct-hie- 
+ 40313-1.html 
+
+ Goldstein,  M.  M.  (2010). The  First Anniversary of the  Health  Information Technology for 
+ Economic and  Clinical  Health  (HITECH)   Act:  The  Regulatory Outlook for  Implementation.  Online 
+Research Journal of Perspectives in  Health  Information  Management,  PMCID:  PMC2921301. 
+
+Goldzweig,  C. L.,  Towfigh,  A.,  Maglione,  M.,  & Shekelle,  P. G. (2009, January 27).  Costs and 
+ Benefits of Health  Information Technology:  New Trends from  the Literature.  Value In  Health 
+ Care,   pp.  282-293. 
+
+ Harding, B. D.  
+                 (2009).  Healthcare  Information  Technology - Present  Investment and Future 
+ Outlook in the American  Healthcare  Market. www.ihealthtran.com:   Institute for  Health 
+Technology Transformation. 
+
+ Hogan,  M.  (2008).  Cloud  Computing  & Databases.  ScaleDB  Inc. 
+
+Hugos,  M.,  & Hulitzky, D. (2011).  Busines  in  the Cloud:  What Every Business  Needs  to Know 
+About  Cloud Computing. John Wiley  & Sons. 
+
+Hulitt, E.,   & Vaughn,  R. B.  
+                              (2008).  Information  System  Security Compliance to  FISMA  standard:  a 
+quantitative  measure.  Telecommunication Systems,  Volume  45,  Numbers 2-3,  Page  139-152. 
+
+Khajeh-Hosseini, A.,  Greenwood,  D.,  Smith, J. W.,  &  
+                                                          Sommerville,  I. (2010).  The  Cloud Adoption 
+ Toolkit: Supporting Cloud Adoption  Decisions  in the  Enterprise.  UK:  University of St Andrews. 
+
+Kocher,  R.,   Emanuel,  E.  
+                           J.,  & DeParle,  N.-A.  (2010). The Affordable  Care Act  and the  Future of 
+Clinical  Medicine: The Opportunities  and  Challenges.  Medicine and Public Issues,  vol.  153 no.  8 
+536-539. 
+
+Kundra,  V. (2010).  State of  
+                               Public Sector Cloud  Computing. CIO  Council. 
+
+Lieberman,  D.  
+                 (2011,  June  15).  HIPAA  Compliance and  Cloud Security.  Retrieved September  2, 
+2011,  from  Infosec Island:  https://www.infosecisland.com/blogview/14328-HIPAA-Compliance- 
+and-Cloud-Security.html 
+
+Mwachofi, A.,  & AI-Assaf, A. F.  
+                                   (2011).  Health Care  Market  Deviations from  the  Ideal  Market. 
+Sultan  Qaboos  University Medical Journal,  11(3): 328-337. 
+
+National Committee  for Quality  Health  Care.  (2006).  CEO  Suvival Guide - Payfor Performance. 
+Washington,  DC:  NCQHC. 
+
+NIST.  (n.d.). An  Introductory Resource Guide for  Implementing the  HIPAA Security  Rule. 
+
+                                                   -61- 
+
+----------------------- Page 63-----------------------
+
+                          the  HIPAA  Privacy Rule on  Health  Research. 
+NIST.  (n.d.).  Effect  of  
+
+N IST.   (2011, January).  Guidelines on Security and Privacy in Public  Cloud Computing.  Retrieved 
+January  19,  2012, from  NIST:  http://csrc.nist.gov/publications/drafts/800-144/Draft-SP-800- 
+144_cloud-computing.pdf 
+
+                                                                                                          the 
+                              (2006).  Ultra-Large-Scale Systems:  The Software  Challenge  of  
+                L.,  & AL,  E.  
+Northrop,  L.  
+Future.  Pittsburgh: Software  Engineering  Institute. 
+
+                                                                                   (2008).  Crime  and 
+Parante, S.,   Mandelbaum,  K.,   Hanson,  S.,   Cassidy,  B.,  & Simborg,  D.  
+                                                                                            healthcare 
+punishment. Can  the  NHIN  reduce the cost of healthcare fraud? Journal  of  
+information  management,  22(3):42-51. 
+
+PG,  S.,  SC,   M.,  & EB,   K. (2006).  Costs and Benefits  of Health Information  Technology. Evidence 
+Report/Technology Assessment  No.  132.  Rockville,  M D:  AHRQ  Publication  No.  06-E006. 
+
+            S.,   Rossman,  G.,  White,  E.,   & Carlos  Oliveira,  M.  0.  (2010).  Nine  Design  Principles of an 
+Rajan,  S.  
+Enterprise  Cloud-oriented  Datacenter  Blueprint.  Cloud  Computing Journal. 
+
+                            (2011).  Cloud  Computing: Principles and Paradigms. John Wiley  & Sons. 
+Rajkumar  Buyya, J. B.  
+
+                                      (2007).  Measuring  Hospital Performance:  The  Importance of 
+Shih, A.,  & Schoenbaum, S. C.  
+Process Measures.  The Commonwealth  Fund. 
+
+Shimrat,  0. (April  2009). Could  Computing  and  Healthcare  - Bad  Weather  or Sunny  Forecast? 
+
+SanDiegoPhysician.org , 4. 
+
+Shiner,  K. T. (2010).  HIPAA  after HITECH  - Top Five  Current Issues for Physician Practices. 
+ McCandlish & Lillard  Legal  Counsel. 
+
+The  Commonwealth  Fund.  (2011).  New Study:  U.S.  Ranks  Last Among  High-Income  Nations on 
+ Preventable Deaths.  The Commonwealth  Fund  Website. 
+
+The  Kaiser  Family Foundation and  Health  Research  Educational Trust.  (2011).  Employer Health 
+
+ Benefits. Annual  Survey. 
+
+The Society of Hospital  Medicine's  Benchmarks  Committee.  (2006).  Measuring Hospitalist 
+ Performance:  Metrics, Reports,  and Dashboards. Society of Hospital Medicine. 
+
+The Wall  Street  Transcript.  (Aug 10,  2009).  The Stimulus Package and Healthcare IT. The Wall 
+
+ Street Transcript. 
+
+                                                         - 62  - 
+
+----------------------- Page 64-----------------------
+
+Thompson,  D.  
+                   I.,  
+                      Osberoff, J.,  Classen,  D.,  & Sitting,  D. (2009).  A Review of Methods to  Estimate 
+the  Benefits of Electronic Medical  Records in  Hospitals and  the  Need for a National  Benefits 
+ Database. Journal of Healthcare Information  Management,  Vol.  21,  No.  1, Pg.62-68. 
+
+Turner,  F. (2011, October).  Use  HITECH  as  directed.  Turner  & Turner. 
+
+Wager,  K. A.,   Lee,  F.  
+                           W.,  & Glaser, J. P.  
+                                                   (2009).  Health  Care  Information  Systems: A Practical 
+Approach for Health Care Management.  Second  Edition: Jossy-Bass. 
+
+White  House  Executive Order.  (2004, April  30).  Incentivesfor the  Use  of Health Information 
+ Technology & Establishing  the Position  of the NHI  IT Coordinator. Retrieved  December  27,  2011, 
+from  NASA:  http://nodis3.gsfc.nasa.gov/displayEO.cfm?id=EO_13335_ 
+
+Wu,  S.,  Chaudhry,  B.,  Wang, J.,   Maglione, M.,  Mojica, W.,  Roth,  E.,   et al.  (2006).  Systematic 
+ Review:  Impact of Health  Information Technology on  Quality, Efficiency, and Costs of Medical 
+Care.  Annals of Internal Medicine  144.10,  pp.  742-752. 
+
+                                                           - 63 - 
+
+----------------------- Page 65-----------------------
+
+Appendix  I EHR Workflow and Implementation  Checklist  (by HIMSS) 
+            <<Double click on the  image  below to active the appendix  document>> 
+
+            Electronic  Health Records  Workflow  and Implementation 
+                                     Challenges  Checklist 
+
+                       Developed by the ME-PI  Tools and Topics Workgroup 
+                                 of the Management  Engineering  & 
+                                  Process Improvement Comunittee 
+
+                                             October, 2010 
+
+                                              Page  i                                Version  1.3 
+
+                                                     -64- 
